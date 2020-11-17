@@ -12,3 +12,4 @@ source $HOME/.config/nvim/keys/which-key.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/codi.vim
+source $HOME/.config/nvim/themes/gruvbox.vim

@@ -55,4 +55,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " codi
     Plug 'metakirby5/codi.vim'
+
+    " gruvbox theam
+    Plug 'morhetz/gruvbox'
 call plug#end()
