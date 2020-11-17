@@ -22,6 +22,8 @@ $ brew install ripgrep
 $ brew install -HEAD universal-ctags/universal-ctags/universal-ctags
 $ brew install the_silver_searcher
 $ brew install fd
+$ brew install jesseduffield/lazygit/lazygitbrew
+$ brew install git-flow
 ```
 
 Install packages ...
