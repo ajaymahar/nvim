@@ -10,7 +10,7 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " Exclude files and directories using Vim's wildignore and CtrlP's own g:ctrlp_custom_ignore:
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+" set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
@@ -21,4 +21,4 @@ let g:ctrlp_custom_ignore = {
 
 "  Use a custom file listing command:
 let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
-let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+" let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
