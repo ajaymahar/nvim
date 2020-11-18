@@ -58,4 +58,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " gruvbox theam
     Plug 'morhetz/gruvbox'
+
+    " crtlp fzf files finder
+    Plug 'git@github.com:kien/ctrlp.vim.git'
+
+    " Vim Wiki
+    Plug 'https://github.com/vimwiki/vimwiki.git'
 call plug#end()
