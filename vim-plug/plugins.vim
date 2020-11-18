@@ -60,7 +60,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'morhetz/gruvbox'
 
     " crtlp fzf files finder
-    Plug 'git@github.com:kien/ctrlp.vim.git'
+    Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 
     " Vim Wiki
     Plug 'https://github.com/vimwiki/vimwiki.git'
