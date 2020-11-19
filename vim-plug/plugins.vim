@@ -64,4 +64,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Vim Wiki
     Plug 'https://github.com/vimwiki/vimwiki.git'
+
+    " quick scope to find something quick in line
+    Plug 'unblevable/quick-scope'
 call plug#end()
