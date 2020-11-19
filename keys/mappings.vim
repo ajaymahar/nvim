@@ -9,8 +9,8 @@ nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
 " I hate escape more than anything else
-inoremap jk <Esc>
-inoremap kj <Esc>
+inoremap jk <esc>
+inoremap kj <esc>
 
 " Easy CAPS
 inoremap <c-u> <ESC>viwUi
@@ -30,11 +30,18 @@ nnoremap <C-c> <Esc>
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" Batter moving/shifting block of code
+" select the block of code or peragraph using v or V
+" use K to move upwords
+" use J to move downwords
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
 
-" Better window navigation
+"Better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
