@@ -67,4 +67,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " quick scope to find something quick in line
     Plug 'unblevable/quick-scope'
+   
+    " carbon plugin to create post images from vim 
+    Plug 'kristijanhusak/vim-carbon-now-sh'
 call plug#end()
