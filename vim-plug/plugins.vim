@@ -34,7 +34,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
-          
+
     " Sneak for searching
     Plug 'justinmk/vim-sneak'
 
@@ -50,8 +50,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " terminal
     Plug 'voldikss/vim-floaterm'
 
-    "snippets 
-    Plug 'honza/vim-snippets'
+    "snippets
+    Plug 'honza/vim-snippets' | Plug 'SirVer/ultisnips'
 
     " codi
     Plug 'metakirby5/codi.vim'
@@ -67,7 +67,17 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " quick scope to find something quick in line
     Plug 'unblevable/quick-scope'
-   
-    " carbon plugin to create post images from vim 
+
+    " carbon plugin to create post images from vim
     Plug 'kristijanhusak/vim-carbon-now-sh'
+
+    " vim plugin to comment out block of codes
+    Plug 'https://github.com/tpope/vim-commentary.git'
+
+    " Plugin for vim-go development
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+    " Plugin for split and join the code block
+    Plug 'https://github.com/AndrewRadev/splitjoin.vim.git'
+
 call plug#end()
