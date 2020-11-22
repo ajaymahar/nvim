@@ -1,3 +1,34 @@
+" Remove tralling white spaces while saving any files
+autocmd BufWritePre * %s/\s\+$//e
+
+" Comment/uncomment block of code with /
+" Use / when you select the code and wnat to comment outj
+" Use // when you are in noraml mode and want to comment/uncomment block of code
+" Use . when you wan tot comment out single line at a time.
+vmap / gc
+nmap // gcap
+nmap . gcc
+
+" Disabling Right arrow keys :)
+nnoremap <Right> :echo "No left for you!"<CR>
+vnoremap <Right> :<C-u>echo "No left for you!"<CR>
+inoremap <Right> <C-o>:echo "No left for you!"<CR>
+
+" Disabling Left arrow keys :)
+nnoremap <Left> :echo "No right for you!"<CR>
+vnoremap <Left> :<C-u>echo "No right for you!"<CR>
+inoremap <Left> <C-o>:echo "No right for you!"<CR>
+
+" Disabling Up arrow keys :)
+nnoremap <Up> :echo "No Up for you!"<CR>
+vnoremap <Up> :<C-u>echo "No Up for you!"<CR>
+inoremap <Up> <C-o>:echo "No Up for you!"<CR>
+
+" Disabling Down arrow keys :)
+nnoremap <Down> :echo "No Down for you!"<CR>
+vnoremap <Down> :<C-u>echo "No Down for you!"<CR>
+inoremap <Down> <C-o>:echo "No Down for you!"<CR>
+
 " Better nav for omnicomplete
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
