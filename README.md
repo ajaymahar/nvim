@@ -24,6 +24,7 @@ $ brew install the_silver_searcher
 $ brew install fd
 $ brew install jesseduffield/lazygit/lazygitbrew
 $ brew install git-flow
+$ brew install tmux
 ```
 
 Install packages ...
