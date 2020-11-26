@@ -29,10 +29,14 @@ $ brew install tmux
 
 Install packages ...
 
+To run python debugger pudb use below command
+`pyhton -m pudb <your_python_file.py>`
 ```sh
 $ sudo pip3 install neovim
 $ sudo pip3 install pynvim
 $ sudo pip3 install neovim-remote
+$ sudo pip3 install tmuxp
+$ sudo pip3 install pudb
 ```
 
 ### Clone the configuration
