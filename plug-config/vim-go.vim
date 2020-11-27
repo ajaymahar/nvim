@@ -4,8 +4,8 @@ set autowrite
 " Use Leader key + a to close the quickfix window
 " Use crtl + m to jump to previos error
 " Use ctrl + c to run test covrage
-map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
+map <C-n> :cnext<CR>
 map <C-c> :GoCoverage<CR>
 nnoremap <leader>a :cclose<CR>
 
@@ -50,19 +50,22 @@ let g:go_test_timeout = '10s'
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
+" let g:go_highlight_function_calls = 1
 " let g:go_highlight_operators = 1
 "
 "
 " build tags highlighting
-let g:go_highlight_build_constraints = 1
+" let g:go_highlight_build_constraints = 1
 
 
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_deadline = "5s"
 
 let g:go_def_mode = 'godef'
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient [LC]
+let g:go_def_mapping_enabled = 0
 "
 " Currently by default :GoDecls and :GoDeclsDir show type and function declarations.
 " This is customizable with the g:go_decls_includes setting. By default it's in the form of:
@@ -71,9 +74,32 @@ let g:go_def_mode = 'godef'
 "
 "
 " vim-go has a support to automatically show the information whenever you move your cursor.
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
 
 set updatetime=100
 
 " vim-go can automatically highlight matching identifiers.
 " let g:go_auto_sameids = 1
+"
+"
+"
+" Setup debuggig keybindings for golang
+let g:go_debug_mappings = {
+    \ '(go-debug-continue)': {'key': 'c', 'arguments': '<nowait>'},
+    \ '(go-debug-next)': {'key': 'j', 'arguments': '<nowait>'},
+    \ '(go-debug-step)': {'key': 'J'},
+  \}
+
+let g:go_debug_windows = {
+            \ 'vars':       'leftabove 30vnew',
+            \ 'stack':      'leftabove 20new',
+            \ 'goroutines': 'botright 10new',
+            \ 'out':        'botright 5new',
+  \ }
+map dp :GoDebugBreakpoint<CR>
+map gs :GoDebugStart<CR>
+map gk :GoDebugStepOut<CR>
+map gq :GoDebugStop<CR>
+
+let g:go_debug_breakpoint_sign_text = '>'
+let g:go_debug_log_output = 'debugger'

@@ -12,21 +12,21 @@
   // python config
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
-  "snippets.ultisnips.directories": [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ],
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
   // explorer
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
   "explorer.position": "left",
   "explorer.keyMappings.global": {
-    "<cr>": [
-      "expandable?",
-      "expand",
-      "open"
-    ],
+    "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
+  },
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".config/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    }
   }
 }

@@ -7,7 +7,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " Use . when you wan tot comment out single line at a time.
 vmap / gc
 nmap // gcap
-nmap . gcc
+nmap .. gcc
 
 " Disabling Right arrow keys :)
 nnoremap <Right> :echo "No left for you!"<CR>
@@ -34,14 +34,21 @@ inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
 " Use alt + hjkl to resize windows
-nnoremap <M-j>    :resize -2<CR>
-nnoremap <M-k>    :resize +2<CR>
-nnoremap <M-h>    :vertical resize -2<CR>
-nnoremap <M-l>    :vertical resize +2<CR>
+" does not work on MacOs
+" nnoremap <M-j>    :resize -2<CR>
+" nnoremap <M-k>    :resize +2<CR>
+" nnoremap <M-h>    :vertical resize -2<CR>
+" nnoremap <M-l>    :vertical resize +2<CR>
 
 " I hate escape more than anything else
 inoremap jk <esc>
 inoremap kj <esc>
+
+" resize panes
+nnoremap <silent> <Right> :vertical resize +5<cr>
+nnoremap <silent> <Left> :vertical resize -5<cr>
+nnoremap <silent> <Up> :resize +5<cr>
+nnoremap <silent> <Down> :resize -5<cr>
 
 " Easy CAPS
 inoremap <c-u> <ESC>viwUi
@@ -80,3 +87,18 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
+
+
+" Flottting terminal mapping
+nnoremap <silent> <Leader><Leader>t :FloatermNew --wintype=normal --height=6<CR>
+nnoremap <silent> <Leader><Leader>f :FloatermNew fzf<CR>
+nnoremap <silent> <Leader><Leader>g :FloatermNew lazygit<CR>
+nnoremap <silent> <Leader><Leader>n :FloatermNew node<CR>
+nnoremap <silent> <Leader><Leader>p :FloatermNew python<CR>
+
+
+" Tagbar keybinding
+nnoremap <C-t> :TagbarToggle<CR>
+
+" close all buffers except the current one
+nnoremap <C-w> :BufOnly<CR>
