@@ -80,4 +80,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plugin for split and join the code block
     Plug 'https://github.com/AndrewRadev/splitjoin.vim.git'
 
+    " Tagbar plugin for batter view the class and methods
+    Plug 'preservim/tagbar'
+
 call plug#end()

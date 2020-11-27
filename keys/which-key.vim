@@ -214,7 +214,7 @@ let g:which_key_map.s = {
       \ 'y' : [':Filetypes'             , 'file types'],
       \ 'z' : [':FZF'                   , 'FZF'],
       \ }
-" 
+"
 " :CocCommand fzf-preview.AllBuffers
 " :CocCommand fzf-preview.Changes
 " :CocCommand fzf-preview.Yankround
@@ -224,7 +224,7 @@ let g:which_key_map.s = {
 " :CocCommand fzf-preview.CocTypeDefinitions
 " \ 'l' : [':CocCommand fzf-preview.Bookmarks', 'list bookmarks'],
 " $FZF_PREVIEW_PREVIEW_BAT_THEME = 'ansi-dark'
-" 
+"
 
 let g:which_key_map.S = {
       \ 'name' : '+Session' ,
@@ -266,9 +266,9 @@ let g:which_key_map.g = {
       \ }
       " \ 'A' : [':Git add %'                        , 'add current'],
       " \ 'S' : [':!git status'                      , 'status'],
-" 
-" 
-" 
+"
+"
+"
 
 let g:which_key_map.G = {
       \ 'name' : '+gist' ,
