@@ -41,4 +41,4 @@ syntax on
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 " You can't stop me
-cmap w!! w !sudo tee %
+cmap w!! w !sudo mee %
