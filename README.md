@@ -37,6 +37,7 @@ $ sudo pip3 install pynvim
 $ sudo pip3 install neovim-remote
 $ sudo pip3 install tmuxp
 $ sudo pip3 install pudb
+$ sudo pip3 install pysnooper
 ```
 
 ### Clone the configuration
