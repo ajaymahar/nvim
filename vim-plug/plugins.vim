@@ -59,6 +59,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " gruvbox theam
     Plug 'morhetz/gruvbox'
 
+    " molokai theme
+    Plug 'fatih/molokai'
     " crtlp fzf files finder
     Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 

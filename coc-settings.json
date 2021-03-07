@@ -7,6 +7,7 @@
     "html",
     "yaml",
     "json",
+    "golang",
     "python"
   ],
   // python config
@@ -14,9 +15,10 @@
   "python.linting.pylintEnabled": true,
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
   // explorer
-  "explorer.width": 30,
+  "explorer.width": 25,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
+  "explorer.quitOnOpen": true,
   "explorer.position": "left",
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
