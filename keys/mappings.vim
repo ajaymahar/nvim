@@ -2,7 +2,7 @@
 autocmd BufWritePre * %s/\s\+$//e
 
 " Comment/uncomment block of code with /
-" Use / when you select the code and wnat to comment outj
+" Use / when you select the code and wnat to comment out
 " Use // when you are in noraml mode and want to comment/uncomment block of code
 " Use . when you wan tot comment out single line at a time.
 vmap / gc
@@ -52,7 +52,7 @@ nnoremap <silent> <Down> :resize -5<cr>
 
 " Easy CAPS
 inoremap <c-u> <ESC>viwUi
-nnoremap <c-u> viwU<Esc>
+nnoremap <c-u> viwUi<Esc>
 
 " TAB in general mode will move to text buffer
 nnoremap <TAB> :bnext<CR>
@@ -90,7 +90,7 @@ nnoremap <Leader>O O<Esc>^Da
 
 
 " Flottting terminal mapping
-nnoremap <silent> <Leader><Leader>t :FloatermNew --wintype=normal --height=6<CR>
+nnoremap <silent> <Leader><Leader>t :FloatermNew --wintype=normal --height=10<CR>
 nnoremap <silent> <Leader><Leader>f :FloatermNew fzf<CR>
 nnoremap <silent> <Leader><Leader>g :FloatermNew lazygit<CR>
 nnoremap <silent> <Leader><Leader>n :FloatermNew node<CR>
