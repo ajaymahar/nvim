@@ -10,7 +10,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     " File Explorer
-    Plug 'scrooloose/NERDTree'
+    " Plug 'scrooloose/NERDTree'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Themes
@@ -84,5 +84,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Tagbar plugin for batter view the class and methods
     Plug 'preservim/tagbar'
+
+    " Dash for searching doc
+    Plug 'rizzatti/dash.vim'
 
 call plug#end()

@@ -21,3 +21,4 @@ source $HOME/.config/nvim/plug-config/vim-go.vim
 source $HOME/.config/nvim/util/BufOnly.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/themes/molokai.vim
+source $HOME/.config/nvim/plug-config/snipit.vim
