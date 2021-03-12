@@ -1,5 +1,4 @@
 " Leader Key Maps
-
 let @s = 'veS"'
 
 " Timeout
@@ -16,10 +15,6 @@ let g:which_key_map =  {}
 " Define a separator
 let g:which_key_sep = '→'
 " set timeoutlen=100
-
-" Coc Search & refactor
-nnoremap <leader>? CocSearch <C-R>=expand("<cword>")<CR><CR>
-let g:which_key_map['?'] = 'search word'
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
@@ -39,15 +34,18 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 " Single mappings
 let g:which_key_map['/'] = [ ':call Comment()'                                 , 'comment' ]
+let g:which_key_map['?'] = [ ':NvimTreeFindFile'                               , 'comment' ]
 let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
 let g:which_key_map[';'] = [ ':Commands'                                       , 'commands' ]
 let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
-let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer' ]
+let g:which_key_map['e'] = [ ':NvimTreeToggle'                                 , 'explorer' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
 let g:which_key_map['o'] = [ ':RnvimrToggle'                                   , 'open' ]
 let g:which_key_map['p'] = [ ':Files'                                          , 'search files' ]
-let g:which_key_map['q'] = [ '<Plug>(coc-fix-current)'                         , 'quickfix' ]
+" TODO fix this
+" let g:which_key_map['q'] = [ ':q'                                              , 'quit' ]
+let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
 let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 let g:which_key_map['W'] = [ ':call WindowSwap#EasyWindowSwap()'               , 'move window' ]
@@ -117,7 +115,23 @@ let g:which_key_map.d = {
       \ 's' : ['<Plug>VimspectorStop'                          , 'stop'],
       \ }
 
+" F is for fold
+let g:which_key_map.F = {
+    \ 'name': '+fold',
+    \ 'O' : [':set foldlevel=20', 'open all'],
+    \ 'C' : [':set foldlevel=0', 'close all'],
+    \ 'c' : [':foldclose', 'close'],
+    \ 'o' : [':foldopen', 'open'],
+    \ '1' : [':set foldlevel=1', 'level1'],
+    \ '2' : [':set foldlevel=2', 'level2'],
+    \ '3' : [':set foldlevel=3', 'level3'],
+    \ '4' : [':set foldlevel=4', 'level4'],
+    \ '5' : [':set foldlevel=5', 'level5'],
+    \ '6' : [':set foldlevel=6', 'level6']
+    \ }
+
 " f is for find and replace
+      " \ 'f' : [':Farr'                     , 'file'],
 let g:which_key_map.f = {
       \ 'name' : '+find & replace' ,
       \ 'f' : [':Farr --source=vimgrep'    , 'file'],
@@ -154,77 +168,46 @@ let g:which_key_map.m = {
       " CoC throws an error
       " \ 'a' : [':CocCommand bookmark.annotate', 'annotate bookmark'],
 
-" " s is for search
-" let g:which_key_map.s = {
-"       \ 'name' : '+search' ,
-"       \ '/' : [':History/'              , 'history'],
-"       \ ';' : [':Commands'              , 'commands'],
-"       \ 'a' : [':Ag'                    , 'text Ag'],
-"       \ 'b' : [':BLines'                , 'current buffer'],
-"       \ 'B' : [':Buffers'               , 'open buffers'],
-"       \ 'c' : [':Commits'               , 'commits'],
-"       \ 'C' : [':BCommits'              , 'buffer commits'],
-"       \ 'f' : [':Files'                 , 'files'],
-"       \ 'g' : [':GFiles'                , 'git files'],
-"       \ 'G' : [':GFiles?'               , 'modified git files'],
-"       \ 'h' : [':History'               , 'file history'],
-"       \ 'H' : [':History:'              , 'command history'],
-"       \ 'l' : [':Lines'                 , 'lines'] ,
-"       \ 'm' : [':Marks'                 , 'marks'] ,
-"       \ 'M' : [':Maps'                  , 'normal maps'] ,
-"       \ 'p' : [':Helptags'              , 'help tags'] ,
-"       \ 'P' : [':Tags'                  , 'project tags'],
-"       \ 's' : [':CocList snippets'      , 'snippets'],
-"       \ 'S' : [':Colors'                , 'color schemes'],
-"       \ 't' : [':Rg'                    , 'text Rg'],
-"       \ 'T' : [':BTags'                 , 'buffer tags'],
-"       \ 'w' : [':Windows'               , 'search windows'],
-"       \ 'y' : [':Filetypes'             , 'file types'],
-"       \ 'z' : [':FZF'                   , 'FZF'],
-"       \ }
-      " \ 's' : [':Snippets'     , 'snippets'],
 
-" s is for search
+" s is for search powered by telescope
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
-      \ '/' : [':History/'              , 'history'],
-      \ ';' : [':FzfPreviewCommandPalette'              , 'commands'],
-      \ 'a' : [':Ag'                    , 'text Ag'],
-      \ 'b' : [':CocCommand fzf-preview.BufferLines'                , 'current buffer'],
-      \ 'B' : [':CocCommand fzf-preview.Buffers'               , 'open buffers'],
-      \ 'c' : [':Commits'               , 'commits'],
-      \ 'C' : [':BCommits'              , 'buffer commits'],
-      \ 'd' : [':CocCommand fzf-preview.DirectoryFiles'              , 'directories'],
-      \ 'f' : [':CocCommand fzf-preview.ProjectFiles'                 , 'files'],
-      \ 'g' : [':CocCommand fzf-preview.GitFiles'                , 'git files'],
-      \ 'G' : [':GFiles?'               , 'modified git files'],
-      \ 'h' : [':History'               , 'file history'],
-      \ 'H' : [':History:'              , 'command history'],
-      \ 'l' : [':Lines'                 , 'lines'] ,
-      \ 'm' : [':CocCommand fzf-preview.Marks', 'list marks'],
-      \ 'M' : [':Maps'                  , 'normal maps'] ,
-      \ 'p' : [':Helptags'              , 'help tags'] ,
-      \ 'P' : [':Tags'                  , 'project tags'],
-      \ 'q' : [':CocCommand fzf-preview.QuickFix'                  , 'quickfix list'],
-      \ 's' : [':CocList snippets'      , 'snippets'],
-      \ 'S' : [':Colors'                , 'color schemes'],
-      \ 't' : [':Rg'                    , 'text Rg'],
-      \ 'T' : [':BTags'                 , 'buffer tags'],
-      \ 'w' : [':Windows'               , 'search windows'],
-      \ 'y' : [':Filetypes'             , 'file types'],
-      \ 'z' : [':FZF'                   , 'FZF'],
+      \ '.' : [':Telescope filetypes'                   , 'filetypes'],
+      \ ';' : [':Telescope commands'                    , 'commands'],
+      \ 'a' : [':Telescope lsp_code_actions'            , 'code_actions'],
+      \ 'A' : [':Telescope builtin'                     , 'all'],
+      \ 'b' : [':Telescope buffers'                     , 'buffers'],
+      \ 'B' : [':Telescope git_branches'                , 'git branches'],
+      \ 'd' : [':Telescope lsp_document_diagnostics'    , 'document_diagnostics'],
+      \ 'D' : [':Telescope lsp_workspace_diagnostics'   , 'workspace_diagnostics'],
+      \ 'c' : [':Telescope git_commits'                 , 'git_commits'],
+      \ 'C' : [':Telescope git_bcommits'                , 'git_bcommits'],
+      \ 'f' : [':Telescope find_files'                  , 'files'],
+      \ 'F' : [':Telescope git_files'                   , 'git_files'],
+      \ 'g' : [':Telescope tags'                        , 'tags'],
+      \ 'G' : [':Telescope current_buffer_tags'         , 'buffer_tags'],
+      \ 'h' : [':Telescope command_history'             , 'history'],
+      \ 'H' : [':Telescope help_tags'                   , 'help_tags'],
+      \ 'i' : [':Telescope media_files'                 , 'media files'],
+      \ 'k' : [':Telescope keymaps'                     , 'keymaps'],
+      \ 'l' : [':Telescope loclist'                     , 'loclist'],
+      \ 'm' : [':Telescope marks'                       , 'marks'],
+      \ 'M' : [':Telescope man_pages'                   , 'man_pages'],
+      \ 'o' : [':Telescope vim_options'                 , 'vim_options'],
+      \ 'O' : [':Telescope oldfiles'                    , 'oldfiles'],
+      \ 'p' : [':Telescope fd'                          , 'fd'],
+      \ 'P' : [':Telescope spell_suggest'               , 'spell_suggest'],
+      \ 's' : [':Telescope git_status'                  , 'git_status'],
+      \ 'S' : [':Telescope grep_string'                 , 'grep_string'],
+      \ 't' : [':Telescope live_grep'                   , 'text'],
+      \ 'y' : [':Telescope symbols'                     , 'symbols'],
+      \ 'Y' : [':Telescope lsp_workspace_symbols'       , 'lsp_workspace_symbols'],
+      \ 'r' : [':Telescope registers'                   , 'registers'],
+      \ 'R' : [':Telescope reloader'                    , 'reloader'],
+      \ 'w' : [':Telescope file_browser'                , 'buf_fuz_find'],
+      \ 'u' : [':Telescope colorscheme'                 , 'colorschemes'],
+      \ 'z' : [':Telescope current_buffer_fuzzy_find'   , 'buf_fuz_find'],
       \ }
-"
-" :CocCommand fzf-preview.AllBuffers
-" :CocCommand fzf-preview.Changes
-" :CocCommand fzf-preview.Yankround
-" :CocCommand fzf-preview.CocReferences
-" :CocCommand fzf-preview.CocDiagnostics
-" :CocCommand fzf-preview.CocCurrentDiagnostics
-" :CocCommand fzf-preview.CocTypeDefinitions
-" \ 'l' : [':CocCommand fzf-preview.Bookmarks', 'list bookmarks'],
-" $FZF_PREVIEW_PREVIEW_BAT_THEME = 'ansi-dark'
-"
 
 let g:which_key_map.S = {
       \ 'name' : '+Session' ,
@@ -266,9 +249,6 @@ let g:which_key_map.g = {
       \ }
       " \ 'A' : [':Git add %'                        , 'add current'],
       " \ 'S' : [':!git status'                      , 'status'],
-"
-"
-"
 
 let g:which_key_map.G = {
       \ 'name' : '+gist' ,
@@ -286,46 +266,37 @@ let g:which_key_map.G = {
 " l is for language server protocol
 let g:which_key_map.l = {
       \ 'name' : '+lsp' ,
-      \ '.' : [':CocConfig'                          , 'config'],
-      \ ';' : ['<Plug>(coc-refactor)'                , 'refactor'],
-      \ 'a' : ['<Plug>(coc-codeaction)'              , 'code action'],
-      \ 'A' : ['<Plug>(coc-codeaction-selected)'     , 'selected action'],
-      \ 'b' : [':CocNext'                            , 'next action'],
-      \ 'B' : [':CocPrev'                            , 'prev action'],
-      \ 'c' : [':CocList commands'                   , 'commands'],
-      \ 'd' : ['<Plug>(coc-definition)'              , 'definition'],
-      \ 'D' : ['<Plug>(coc-declaration)'             , 'declaration'],
-      \ 'e' : [':CocList extensions'                 , 'extensions'],
-      \ 'f' : ['<Plug>(coc-format-selected)'         , 'format selected'],
-      \ 'F' : ['<Plug>(coc-format)'                  , 'format'],
-      \ 'h' : ['<Plug>(coc-float-hide)'              , 'hide'],
-      \ 'i' : ['<Plug>(coc-implementation)'          , 'implementation'],
-      \ 'I' : [':CocList diagnostics'                , 'diagnostics'],
-      \ 'j' : ['<Plug>(coc-float-jump)'              , 'float jump'],
-      \ 'l' : ['<Plug>(coc-codelens-action)'         , 'code lens'],
-      \ 'n' : ['<Plug>(coc-diagnostic-next)'         , 'next diagnostic'],
-      \ 'N' : ['<Plug>(coc-diagnostic-next-error)'   , 'next error'],
+      \ 'a' : [':Lspsaga code_action'                , 'quickfix'],
+      \ 'A' : [':Lspsaga range_code_action'          , 'selected action'],
+      \ 'd' : [':Telescope lsp_document_diagnostics' , 'document diagnostics'],
+      \ 'D' : [':Telescope lsp_workspace_diagnostics', 'workspace diagnostics'],
+      \ 'f' : [':LspFormatting'                      , 'format'],
+      \ 'H' : [':Lspsaga signature_help'             , 'signature_help'],
+      \ 'I' : [':LspInfo'                            , 'lsp_info'],
+      \ 'l' : [':Lspsaga lsp_finder'                 , 'lsp_finder'],
+      \ 'L' : [':Lspsaga show_line_diagnostics'      , 'line_diagnostics'],
       \ 'o' : [':Vista!!'                            , 'outline'],
-      \ 'O' : [':CocList outline'                    , 'search outline'],
-      \ 'p' : ['<Plug>(coc-diagnostic-prev)'         , 'prev diagnostic'],
-      \ 'P' : ['<Plug>(coc-diagnostic-prev-error)'   , 'prev error'],
-      \ 'q' : ['<Plug>(coc-fix-current)'             , 'quickfix'],
-      \ 'r' : ['<Plug>(coc-references)'              , 'references'],
-      \ 'R' : ['<Plug>(coc-rename)'                  , 'rename'],
-      \ 's' : [':CocList -I symbols'                 , 'references'],
-      \ 'S' : [':CocList snippets'                   , 'snippets'],
-      \ 't' : ['<Plug>(coc-type-definition)'         , 'type definition'],
-      \ 'u' : [':CocListResume'                      , 'resume list'],
-      \ 'U' : [':CocUpdate'                          , 'update CoC'],
-      \ 'z' : [':CocDisable'                         , 'disable CoC'],
-      \ 'Z' : [':CocEnable'                          , 'enable CoC'],
+      \ 'p' : [':Lspsaga preview_definition'         , 'preview definition'],
+      \ 'q' : [':Telescope quickfix'                 , 'quickfix'],
+      \ 'r' : [':LspRename'                          , 'rename'],
+      \ 'T' : [':LspTypeDefinition'                  , 'type defintion'],
+      \ 'x' : [':cclose'                             , 'close quickfix'],
+      \ 's' : [':Telescope lsp_document_symbols'     , 'document symbols'],
+      \ 'S' : [':Telescope lsp_workspace_symbols'    , 'workspace symbols'],
       \ }
-      " \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
+      " \ 'D' : [':LspDeclaration'                     , 'workspace_diagnostics'],
+      " \ 'r' : [':Telescope lsp_references'           , 'references'],
+      " \ 'p' : [':Lspsaga diagnostic_jump_prev'       , 'prev diagnostic'],
+      " \ 'n' : [':Lspsaga diagnostic_jump_next'       , 'next_diagnostic'],
+      " \ 'q' : [':Lspsaga code_action'                , 'quickfix'],
+      " \ 'i' : [':LspImplementation'                  , 'lsp_info'],
+      " \ 'h' : [':Lspsaga hover_doc'                  , 'hover_doc'],
+      " \ 'K' : [':LspHover'                           , 'hover'],
 
 " t is for terminal
-let g:which_key_map.T = {
+let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew --wintype=normal --height=10'        , 'terminal'],
+      \ ';' : [':FloatermNew --wintype=normal --height=6'       , 'terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
       \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
@@ -333,57 +304,10 @@ let g:which_key_map.T = {
       \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
       \ 'p' : [':FloatermNew python'                            , 'python'],
       \ 'm' : [':FloatermNew lazynpm'                           , 'npm'],
+      \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
-      \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
+      \ 'u' : [':FloatermNew ncdu'                              , 'ncdu'],
       \ }
 
-" w is for wiki
-" let g:which_key_map.w = {
-"       \ 'name' : '+wiki' ,
-"       \ 'w' : ['<Plug>VimwikiIndex'                              , 'ncdu'],
-"       \ 'n' : ['<plug>(wiki-open)'                              , 'ncdu'],
-"       \ 'j' : ['<plug>(wiki-journal)'                              , 'ncdu'],
-"       \ 'R' : ['<plug>(wiki-reload)'                              , 'ncdu'],
-"       \ 'c' : ['<plug>(wiki-code-run)'                              , 'ncdu'],
-"       \ 'b' : ['<plug>(wiki-graph-find-backlinks)'                              , 'ncdu'],
-"       \ 'g' : ['<plug>(wiki-graph-in)'                              , 'ncdu'],
-"       \ 'G' : ['<plug>(wiki-graph-out)'                              , 'ncdu'],
-"       \ 'l' : ['<plug>(wiki-link-toggle)'                              , 'ncdu'],
-"       \ 'd' : ['<plug>(wiki-page-delete)'                              , 'ncdu'],
-"       \ 'r' : ['<plug>(wiki-page-rename)'                              , 'ncdu'],
-"       \ 't' : ['<plug>(wiki-page-toc)'                              , 'ncdu'],
-"       \ 'T' : ['<plug>(wiki-page-toc-local)'                              , 'ncdu'],
-"       \ 'e' : ['<plug>(wiki-export)'                              , 'ncdu'],
-"       \ 'u' : ['<plug>(wiki-list-uniq)'                              , 'ncdu'],
-"       \ 'U' : ['<plug>(wiki-list-uniq-local)'                              , 'ncdu'],
-"       \ }
-
-" Global
-" <Plug>VimwikiIndex
-" <Plug>VimwikiTabIndex
-" <Plug>VimwikiUISelect
-" <Plug>VimwikiDiaryIndex
-" <Plug>VimwikiMakeDiaryNote
-" <Plug>VimwikiTabMakeDiaryNote
-" <Plug>VimwikiMakeYesterdayDiaryNote
-" <Plug>VimwikiMakeTomorrowDiaryNote
-"
-" " Local
-" <Plug>Vimwiki2HTML
-" <Plug>Vimwiki2HTMLBrowse
-" <Plug>VimwikiDiaryGenerateLinks
-" <Plug>VimwikiFollowLink
-" <Plug>VimwikiSplitLink
-" <Plug>VimwikiVSplitLink
-" <Plug>VimwikiTabnewLink
-" <Plug>VimwikiGoBackLink
-" <Plug>VimwikiNextLink
-" <Plug>VimwikiPrevLink
-" <Plug>VimwikiGoto
-" <Plug>VimwikiDeleteLink
-" <Plug>VimwikiRenameLink
-" <Plug>VimwikiAddHeaderLevel
-
-" Register which key map
 call which_key#register('<Space>', "g:which_key_map")
