@@ -1,9 +1,3 @@
-"    ____      _ __        _
-"   /  _/___  (_) /__   __(_)___ ___
-"   / // __ \/ / __/ | / / / __ `__ \
-" _/ // / / / / /__| |/ / / / / / / /
-"/___/_/ /_/_/\__(_)___/_/_/ /_/ /_/
-
 " General Settings
 if !exists('g:vscode')
   source ~/.config/nvim/plug-config/polyglot.vim
@@ -21,7 +15,7 @@ if exists('g:vscode')
 else
 
   " Themes
-  " source ~/.config/nvim/themes/syntax.vim
+  source ~/.config/nvim/themes/syntax.vim
   source ~/.config/nvim/themes/nvcode.vim
   source ~/.config/nvim/themes/gruvbox.vim
   " source ~/.config/nvim/themes/molokai.vim
@@ -29,10 +23,12 @@ else
   " BufOnly
   source ~/.config/nvim/plug-config/snipit.vim
   source ~/.config/nvim/plug-config/bufOnly.vim
+  " source ~/.config/nvim/keys/which-key.vim
+  source ~/.config/nvim/plug-config/undotree.vim
+  source ~/.config/nvim/plug-config/carbon.vim
+
 
   " Plugin Configuration
-  source ~/.config/nvim/keys/which-key.vim
-  source ~/.config/nvim/plug-config/vim-commentary.vim
   source ~/.config/nvim/plug-config/rnvimr.vim
   source ~/.config/nvim/plug-config/codi.vim
   source ~/.config/nvim/plug-config/easymotion.vim

@@ -1,13 +1,6 @@
 " Remove tralling white spaces while saving any files
 autocmd BufWritePre * %s/\s\+$//e
 
-" Comment/uncomment block of code with /
-" Use / when you select the code and wnat to comment out
-" Use // when you are in noraml mode and want to comment/uncomment block of code
-" Use . when you wan tot comment out single line at a time.
-vmap / gc
-nmap // gcap
-nmap .. gcc
 
 " Disabling Right arrow keys :)
 nnoremap <Right> :echo "No left for you!"<CR>
@@ -29,19 +22,17 @@ nnoremap <Down> :echo "No Down for you!"<CR>
 vnoremap <Down> :<C-u>echo "No Down for you!"<CR>
 inoremap <Down> <C-o>:echo "No Down for you!"<CR>
 
-" Flottting terminal mapping
-nnoremap <silent> <Leader><Leader>t :FloatermNew --wintype=normal --height=10<CR>
-nnoremap <silent> <Leader><Leader>f :FloatermNew fzf<CR>
-nnoremap <silent> <Leader><Leader>g :FloatermNew lazygit<CR>
-nnoremap <silent> <Leader><Leader>n :FloatermNew node<CR>
-nnoremap <silent> <Leader><Leader>p :FloatermNew python<CR>
-
-
 " Tagbar keybinding
 nnoremap <C-t> :TagbarToggle<CR>
 
+" NvimTreeToggle
+nnoremap <silent> <Leader>e :NvimTreeToggle<CR>
+
 " close all buffers except the current one
 nnoremap <C-w> :BufOnly<CR>
+
+" Flottting terminal mapping
+nnoremap <silent> <Leader>t :FloatermNew --wintype=normal --height=10<CR>
 
 " Basic Key Mappings
 imap <C-h> <C-w>h
@@ -103,16 +94,16 @@ else
   nnoremap <C-k> <C-w>k
   nnoremap <C-l> <C-w>l
 
-  " Terminal window navigation
-  tnoremap <C-h> <C-\><C-N><C-w>h
-  tnoremap <C-j> <C-\><C-N><C-w>j
-  tnoremap <C-k> <C-\><C-N><C-w>k
-  tnoremap <C-l> <C-\><C-N><C-w>l
-  inoremap <C-h> <C-\><C-N><C-w>h
-  inoremap <C-j> <C-\><C-N><C-w>j
-  inoremap <C-k> <C-\><C-N><C-w>k
-  inoremap <C-l> <C-\><C-N><C-w>l
-  tnoremap <Esc> <C-\><C-n>
+  " " Terminal window navigation
+  " tnoremap <C-h> <C-\><C-N><C-w>h
+  " tnoremap <C-j> <C-\><C-N><C-w>j
+  " tnoremap <C-k> <C-\><C-N><C-w>k
+  " tnoremap <C-l> <C-\><C-N><C-w>l
+  " inoremap <C-h> <C-\><C-N><C-w>h
+  " inoremap <C-j> <C-\><C-N><C-w>j
+  " inoremap <C-k> <C-\><C-N><C-w>k
+  " inoremap <C-l> <C-\><C-N><C-w>l
+  " tnoremap <Esc> <C-\><C-n>
 
   " Use alt + hjkl to resize windows
   " nnoremap <silent> <M-j>    :resize -2<CR>
@@ -120,22 +111,26 @@ else
   " nnoremap <silent> <M-h>    :vertical resize -2<CR>
   " nnoremap <silent> <M-l>    :vertical resize +2<CR>
 
-  nnoremap <silent> <C-Up>    :resize -2<CR>
-  nnoremap <silent> <C-Down>  :resize +2<CR>
-  nnoremap <silent> <C-Left>  :vertical resize -2<CR>
-  nnoremap <silent> <C-Right> :vertical resize +2<CR>
+"   nnoremap <silent> <C-Up>    :resize -2<CR>
+"   nnoremap <silent> <C-Down>  :resize +2<CR>
+"   nnoremap <silent> <C-Left>  :vertical resize -2<CR>
+"   nnoremap <silent> <C-Right> :vertical resize +2<CR>
 
-  let g:elite_mode=0                      " Disable arrows"
-  " Disable arrow movement, resize splits instead.
-  if get(g:, 'elite_mode')
-      nnoremap <C-Up>    :resize -2<CR>
-      nnoremap <C-Down>  :resize +2<CR>
-      nnoremap <C-Left>  :vertical resize -2<CR>
-      nnoremap <C-Right> :vertical resize +2<CR>
-  endif
+  " let g:elite_mode=0                      " Disable arrows"
+  " " Disable arrow movement, resize splits instead.
+  " if get(g:, 'elite_mode')
+  "     nnoremap <C-Up>    :resize -2<CR>
+  "     nnoremap <C-Down>  :resize +2<CR>
+  "     nnoremap <C-Left>  :vertical resize -2<CR>
+  "     nnoremap <C-Right> :vertical resize +2<CR>
+  " endif
+
+" Comment/uncomment block of code with /
+" Use / when you select the code and wnat to comment out
+" Use // when you are in noraml mode and want to comment/uncomment block of code
+" Use . when you wan tot comment out single line at a time.
+vmap / gc
+nmap ,. gcap
+nmap , gcc
 
 endif
-
-" Better nav for omnicomplete
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")

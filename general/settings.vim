@@ -63,7 +63,7 @@ cmap w!! w !sudo tee %
   "Method for folding
 set foldmethod=indent
   "Open all when entering for the first time
-set foldlevel=20
-  "Save the state for the next time
+" set foldlevel=20
+  " Save the state for the next time
 " autocmd BufWinLeave *.* mkview
-" autocmd BufWinEnter *.* silent! loadview
+autocmd BufWinEnter *.* silent! loadview
