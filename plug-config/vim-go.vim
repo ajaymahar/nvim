@@ -62,6 +62,7 @@ let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_deadline = "5s"
 
+let g:go_doc_popup_window = 1
 let g:go_def_mode = 'gopls'
 let g:go_info_mode='gopls'
 " disable vim-go :GoDef short cut (gd)
@@ -75,7 +76,7 @@ let g:go_decls_includes = "func,type"
 "
 "
 " vim-go has a support to automatically show the information whenever you move your cursor.
-" let g:go_auto_type_info = 1
+let g:go_auto_type_info = 1
 
 set updatetime=100
 

@@ -5,7 +5,6 @@ endif
 source ~/.config/nvim/vim-plug/plugins.vim
 source ~/.config/nvim/general/settings.vim
 source ~/.config/nvim/general/functions.vim
-source ~/.config/nvim/keys/mappings.vim
 
 if exists('g:vscode')
   " VS Code extension
@@ -17,12 +16,12 @@ else
   " Themes
   source ~/.config/nvim/themes/syntax.vim
   source ~/.config/nvim/themes/nvcode.vim
-  source ~/.config/nvim/themes/gruvbox.vim
-  " source ~/.config/nvim/themes/molokai.vim
 
-  " BufOnly
+  source ~/.config/nvim/themes/molokai.vim
+  source ~/.config/nvim/themes/gruvbox.vim
+
+
   source ~/.config/nvim/plug-config/snipit.vim
-  source ~/.config/nvim/plug-config/bufOnly.vim
   " source ~/.config/nvim/keys/which-key.vim
   source ~/.config/nvim/plug-config/undotree.vim
   source ~/.config/nvim/plug-config/carbon.vim
@@ -45,7 +44,6 @@ else
   source ~/.config/nvim/plug-config/bracey.vim
   source ~/.config/nvim/plug-config/markdown-preview.vim
   source ~/.config/nvim/plug-config/nvimtree-config.vim
-  source ~/.config/nvim/plug-config/lsp-saga.vim
   source ~/.config/nvim/plug-config/lightbulb.vim
   source ~/.config/nvim/lua/lsp-wrapper.vim
   source ~/.config/nvim/plug-config/lsp-config.vim
@@ -57,7 +55,6 @@ else
   luafile ~/.config/nvim/lua/plugins/telescope-config.lua
   luafile ~/.config/nvim/lua/lsp/lsp-kind.lua
   luafile ~/.config/nvim/lua/plugins/compe-config.lua
-  luafile ~/.config/nvim/lua/plugins/lspsaga-config.lua
   " LSP: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
   luafile ~/.config/nvim/lua/lsp/lsp-config.lua
   luafile ~/.config/nvim/lua/lsp/lua-ls.lua
@@ -75,20 +72,15 @@ else
   " Golang
   source ~/.config/nvim/plug-config/vim-go.vim
   source ~/.config/nvim/lua/lsp/golang.lua
-endif
-source $HOME/.config/nvim/plug-config/quickscope.vim
 
+  source $HOME/.config/nvim/plug-config/quickscope.vim
+  " Fzf
+  source ~/.config/nvim/plug-config/fzf.vim
+  source ~/.config/nvim/keys/mappings.vim
+endif
 " Add paths to node and python here
 if !empty(glob("~/.config/nvim/paths.vim"))
   source $HOME/.config/nvim/paths.vim
 endif
-
-  " TODO
-  " snippets
-  " autoimport jsx
-  " https://github.com/mfussenegger/nvim-jdtls
-  " fix space and tab triggering completion all the time
-  " Provide diagnostics for nvim tree
-  " port everything possible to lua
 
 autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc

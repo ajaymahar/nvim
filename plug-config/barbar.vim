@@ -18,12 +18,9 @@ let bufferline.clickable = v:true
 " assigned based on their name. Otherwise or in case all letters are
 " already assigned, the behavior is to assign letters in order of
 " usability (see order below)
-let bufferline.semantic_letters = v:true
-
-" New buffer letters are assigned in this order. This order is
 " optimal for the qwerty keyboard layout but might need adjustement
 " for other layouts.
-let bufferline.letters = 
+let bufferline.letters =
   \ 'asdfjkl;ghnmxcbziowerutyqpASDFJKLGHNMXCBZIOWERUTYQP'
 
 let bg_current = get(nvim_get_hl_by_name('Normal',     1), 'background', '#000000')
@@ -54,3 +51,5 @@ exe 'hi default BufferInactiveTarget   guifg=red gui=bold guibg=' . bg_inactive
 
 " For the shadow in buffer-picking mode
 hi default BufferShadow guifg=#000000 guibg=#000000
+
+

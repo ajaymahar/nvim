@@ -16,9 +16,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'unblevable/quick-scope'
     " Useful for React Commenting
     Plug 'suy/vim-context-commentstring'
-    " While I'm learning Lua
-    Plug 'nanotee/nvim-lua-guide'
-    Plug 'rafcamlet/nvim-luapad'
 
   if exists('g:vscode')
     " Easy motion for VSCode
@@ -26,6 +23,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ChristianChiarulli/vscode-easymotion'
     Plug 'machakann/vim-highlightedyank'
   else
+
 
     " Easymotion
     Plug 'easymotion/vim-easymotion'
@@ -67,8 +65,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'psliwka/vim-smoothie'
     " Markdown Preview
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
-    " Intuitive buffer closing
-    Plug 'moll/vim-bbye'
     " Telescope
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -77,7 +73,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Intellisense
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-compe'
-    Plug 'glepnir/lspsaga.nvim'
     Plug 'onsails/lspkind-nvim'
     Plug 'kosayoda/nvim-lightbulb'
     Plug 'mfussenegger/nvim-jdtls'
@@ -135,6 +130,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " molokai theme
     Plug 'fatih/molokai'
+
+    " onedark theme
+    Plug 'joshdick/onedark.vim'
 
     " crtlp fzf files finder
     Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'

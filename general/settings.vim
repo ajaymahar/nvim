@@ -65,5 +65,25 @@ set foldmethod=indent
   "Open all when entering for the first time
 " set foldlevel=20
   " Save the state for the next time
-" autocmd BufWinLeave *.* mkview
+autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent! loadview
+
+" Setting Hybrid numner bar
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+
+" Mappings to make Vim more friendly towards presenting slides.
+autocmd BufNewFile,BufRead *.vpm call SetVimPresentationMode()
+function SetVimPresentationMode()
+  nnoremap <buffer> <Right> :n<CR>
+  nnoremap <buffer> <Left> :N<CR>
+
+  if !exists('#goyo')
+    Goyo
+  endif
+endfunction

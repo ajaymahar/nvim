@@ -2,6 +2,7 @@
 autocmd BufWritePre * %s/\s\+$//e
 
 
+" ========================== Arrow keys =========================
 " Disabling Right arrow keys :)
 nnoremap <Right> :echo "No left for you!"<CR>
 vnoremap <Right> :<C-u>echo "No left for you!"<CR>
@@ -22,14 +23,29 @@ nnoremap <Down> :echo "No Down for you!"<CR>
 vnoremap <Down> :<C-u>echo "No Down for you!"<CR>
 inoremap <Down> <C-o>:echo "No Down for you!"<CR>
 
+" =============Tagbar=======================================
+
 " Tagbar keybinding
 nnoremap <C-t> :TagbarToggle<CR>
 
+" =======================NvimTree=============================
 " NvimTreeToggle
 nnoremap <silent> <Leader>e :NvimTreeToggle<CR>
 
-" close all buffers except the current one
-nnoremap <C-w> :BufOnly<CR>
+" =================Barbar buffer==============================
+" Simulate same TAB behavior in VSCode
+nmap <Tab> :Tabnext<CR>
+nmap <S-Tab> :Tabprev<CR>
+" TAB in general mode will move to text buffer
+nnoremap <silent> <TAB> :BufferNext<CR>
+" SHIFT-TAB will go back
+nnoremap <silent> <S-TAB> :BufferPrevious<CR>
+" close current buffer
+nnoremap <C-w> :BufferClose<CR>
+" TAB in general mode will move to text buffer
+nnoremap <silent> bp :BufferPick<CR>
+
+" ==============================================================
 
 " Flottting terminal mapping
 nnoremap <silent> <Leader>t :FloatermNew --wintype=normal --height=10<CR>
@@ -50,9 +66,6 @@ vnoremap > >gv
 
 if exists('g:vscode')
 
-  " Simulate same TAB behavior in VSCode
-  nmap <Tab> :Tabnext<CR>
-  nmap <S-Tab> :Tabprev<CR>
 
 else
 
@@ -68,10 +81,6 @@ else
   " inoremap <c-u> <ESC>viwUi
   " nnoremap <c-u> viwU<Esc>
 
-  " TAB in general mode will move to text buffer
-  nnoremap <silent> <TAB> :bnext<CR>
-  " SHIFT-TAB will go back
-  nnoremap <silent> <S-TAB> :bprevious<CR>
 
   " Move selected line / block of text in visual mode
   " shift + k to move up
@@ -80,7 +89,7 @@ else
   xnoremap J :move '>+1<CR>gv-gv
 
   " Alternate way to save
-  nnoremap <silent> <C-s> :w<CR>
+  " nnoremap <silent> <C-s> :w<CR>
   " Alternate way to quit
   nnoremap <silent> <C-Q> :wq!<CR>
   " Use control-c instead of escape
@@ -134,3 +143,4 @@ nmap ,. gcap
 nmap , gcc
 
 endif
+
