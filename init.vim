@@ -15,16 +15,18 @@ else
 
   " Themes
   source ~/.config/nvim/themes/syntax.vim
-  source ~/.config/nvim/themes/nvcode.vim
+  " source ~/.config/nvim/themes/nvcode.vim
 
+  " source ~/.config/nvim/themes/ayu.vim
   source ~/.config/nvim/themes/molokai.vim
-  source ~/.config/nvim/themes/gruvbox.vim
+  " source ~/.config/nvim/themes/gruvbox.vim
 
 
   source ~/.config/nvim/plug-config/snipit.vim
   " source ~/.config/nvim/keys/which-key.vim
   source ~/.config/nvim/plug-config/undotree.vim
   source ~/.config/nvim/plug-config/carbon.vim
+
 
 
   " Plugin Configuration
@@ -53,18 +55,18 @@ else
   luafile ~/.config/nvim/lua/plugins/treesitter-config.lua
   " luafile ~/.config/nvim/lua/plugins/colorizer-config.lua
   luafile ~/.config/nvim/lua/plugins/telescope-config.lua
-  luafile ~/.config/nvim/lua/lsp/lsp-kind.lua
+  " luafile ~/.config/nvim/lua/lsp/lsp-kind.lua
   luafile ~/.config/nvim/lua/plugins/compe-config.lua
   " LSP: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
   luafile ~/.config/nvim/lua/lsp/lsp-config.lua
-  luafile ~/.config/nvim/lua/lsp/lua-ls.lua
-  luafile ~/.config/nvim/lua/lsp/python-ls.lua
-  luafile ~/.config/nvim/lua/lsp/bash-ls.lua
-  luafile ~/.config/nvim/lua/lsp/css-ls.lua
-  luafile ~/.config/nvim/lua/lsp/docker-ls.lua
-  luafile ~/.config/nvim/lua/lsp/graphql-ls.lua
-  luafile ~/.config/nvim/lua/lsp/html-ls.lua
-  luafile ~/.config/nvim/lua/lsp/javascript-ls.lua
+  " luafile ~/.config/nvim/lua/lsp/lua-ls.lua
+  " luafile ~/.config/nvim/lua/lsp/python-ls.lua
+  " luafile ~/.config/nvim/lua/lsp/bash-ls.lua
+  " luafile ~/.config/nvim/lua/lsp/css-ls.lua
+  " luafile ~/.config/nvim/lua/lsp/docker-ls.lua
+  " luafile ~/.config/nvim/lua/lsp/graphql-ls.lua
+  " luafile ~/.config/nvim/lua/lsp/html-ls.lua
+  " luafile ~/.config/nvim/lua/lsp/javascript-ls.lua
   luafile ~/.config/nvim/lua/lsp/json-ls.lua
   luafile ~/.config/nvim/lua/lsp/vim-ls.lua
   luafile ~/.config/nvim/lua/lsp/yaml-ls.lua
