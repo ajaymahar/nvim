@@ -33,7 +33,7 @@ autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 " But calling :GoInfo every time is tedious. We can make some improvements to call it faster.
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
+" autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
 " set 4 spaces for tab in golang files
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
@@ -62,7 +62,7 @@ let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_deadline = "5s"
 
-let g:go_doc_popup_window = 1
+let g:go_doc_popup_window = 0
 let g:go_def_mode = 'gopls'
 let g:go_info_mode='gopls'
 " disable vim-go :GoDef short cut (gd)
@@ -106,6 +106,6 @@ map gq :GoDebugStop<CR>
 let g:go_debug_breakpoint_sign_text = '>'
 let g:go_debug_log_output = 'debugger'
 
-let g:go_highlight_structs = 0
-let g:go_highlight_interfaces = 0
-let g:go_highlight_operators = 0
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1

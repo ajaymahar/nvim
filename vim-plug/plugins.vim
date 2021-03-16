@@ -134,6 +134,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " onedark theme
     Plug 'joshdick/onedark.vim'
 
+    Plug 'ayu-theme/ayu-vim'
+
     " crtlp fzf files finder
     Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 

@@ -24,7 +24,7 @@ lua <<EOF
     params.context = context
 
     -- See the implementation of the textDocument/codeAction callback
-    -- (lua/vim/lsp/handler.lua) for how to do this properly.
+    -- i(lua/vim/lsp/handler.lua) for how to do this properly.
     local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeout_ms)
     if not result or next(result) == nil then return end
     local actions = result[1].result
