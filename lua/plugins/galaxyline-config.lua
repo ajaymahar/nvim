@@ -15,7 +15,9 @@ local colors = {
   orange = '#ffb86c',
   magenta = '#ff79c6',
   blue = '#8be9fd',
-  red = '#ff5555'
+  red = '#ff5555',
+  yellow = '#DE781F',
+  gblue ='#1F85DE',
 }
 
 -- Local helper functions
@@ -38,6 +40,7 @@ local mode_color = function()
     R = colors.red,
     s = colors.orange,
     S = colors.green,
+    t = colors.green,
     }
   return mode_colors[vim.fn.mode()]
 end
@@ -60,14 +63,16 @@ gls.left[2] = {
         [''] = 'VISUAL',
         v = 'VISUAL',
         R = 'REPLACE',
-        s = 'REPLACE ',
-        S = 'REPLACE',
+        s = 'SNIP ',
+        S = 'SNIP',
+        t = 'TERM',
       }
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color())
       return alias[vim.fn.mode()]..' '
     end,
     highlight = { colors.bg, colors.bg },
-    separator = "  ",
+    -- separator = "  ",
+    separator = "|  ",
     separator_highlight = {colors.bg, colors.section_bg},
   },
 }
@@ -81,9 +86,11 @@ gls.left[3] ={
 gls.left[4] = {
   FileName = {
     provider = { 'FileName', 'FileSize' },
+    -- provider = { 'FileName' },
     condition = buffer_not_empty,
     highlight = { colors.fg, colors.section_bg },
-    separator = " ",
+    -- separator = " ",
+    separator = "| ",
     separator_highlight = {colors.section_bg, colors.bg},
   }
 }
@@ -92,7 +99,7 @@ gls.left[5] = {
     -- provider = function() return '  ' end,
     provider = function() return '  ' end,
     condition = buffer_not_empty,
-    highlight = {colors.red,colors.bg},
+    highlight = {colors.yellow,colors.bg},
   }
 }
 gls.left[6] = {
@@ -115,7 +122,7 @@ gls.left[8] = {
     provider = 'DiffModified',
     condition = checkwidth,
     icon = ' ',
-    highlight = { colors.orange, colors.bg },
+    highlight = { colors.yellow, colors.bg },
   }
 }
 gls.left[9] = {
@@ -123,14 +130,21 @@ gls.left[9] = {
     provider = 'DiffRemove',
     condition = checkwidth,
     icon = ' ',
+    -- separator = " ",
+    -- separator = "| ",
+    separator_highlight = {colors.section_bg, colors.bg},
     highlight = { colors.red,colors.bg },
   }
 }
 gls.left[10] = {
   LeftEnd = {
-    provider = function() return ' ' end,
+    -- provider = function() return ' ' end,
+    -- provider = function() return '| ' end,
     condition = buffer_not_empty,
-    highlight = {colors.section_bg,colors.bg}
+    -- separator = " ",
+    separator = "| ",
+    separator_highlight = {colors.section_bg, colors.bg},
+    highlight = {colors.fg,colors.bg}
   }
 }
 gls.left[11] = {
@@ -164,7 +178,8 @@ gls.left[15] = {
     provider = 'DiagnosticInfo',
     icon = '  ',
     highlight = {colors.blue,colors.section_bg},
-    separator = ' ',
+    -- separator = ' ',
+    separator = '| ',
     separator_highlight = { colors.section_bg, colors.bg },
   }
 }
@@ -172,29 +187,60 @@ gls.left[15] = {
 -- Right side
 gls.right[1]= {
   FileFormat = {
-    provider = function() return vim.bo.filetype end,
-    highlight = { colors.fg,colors.section_bg },
-    separator = ' ',
-    separator_highlight = { colors.section_bg,colors.bg },
+    provider = 'FileFormat',
+    separator = ' ',
+    separator_highlight = {colors.bg,colors.bg},
+    highlight = {colors.grey,colors.bg},
   }
 }
 gls.right[2] = {
   LineInfo = {
     provider = 'LineColumn',
-    highlight = { colors.fg, colors.section_bg },
     separator = ' | ',
-    separator_highlight = { colors.bg, colors.section_bg },
+    separator_highlight = {colors.darkblue,colors.bg},
+    highlight = {colors.grey,colors.bg},
   },
 }
 gls.right[3] = {
-  Heart = {
-    -- provider = function() return ' ' end,
-    provider = function() return ' ' end,
-    highlight = { colors.green, colors.section_bg },
-    separator = ' | ',
-    separator_highlight = { colors.fg, colors.section_bg },
+  PerCent = {
+    provider = 'LinePercent',
+    separator = ' |',
+    separator_highlight = {colors.darkblue,colors.bg},
+    highlight = {colors.grey,colors.bg},
   }
 }
+gls.right[4] = {
+  ScrollBar = {
+    provider = 'ScrollBar',
+    highlight = {colors.yellow,colors.purple},
+  }
+}
+
+-- gls.right[1]= {
+--   FileFormat = {
+--     provider = function() return vim.bo.filetype end,
+--     highlight = { colors.fg,colors.section_bg },
+--     separator = ' ',
+--     separator_highlight = { colors.section_bg,colors.bg },
+--   }
+-- }
+-- gls.right[2] = {
+--   LineInfo = {
+--     provider = 'LineColumn',
+--     highlight = { colors.fg, colors.section_bg },
+--     separator = ' | ',
+--     separator_highlight = { colors.bg, colors.section_bg },
+--   },
+-- }
+-- gls.right[3] = {
+--   Heart = {
+--     -- provider = function() return ' ' end,
+--     provider = function() return ' ' end,
+--     highlight = { colors.green, colors.section_bg },
+--     separator = ' -> ',
+--     separator_highlight = { colors.fg, colors.section_bg },
+--   }
+-- }
 
 -- Short status line
 gls.short_line_left[1] = {
