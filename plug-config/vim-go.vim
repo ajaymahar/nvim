@@ -109,3 +109,6 @@ let g:go_debug_log_output = 'debugger'
 let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
+
+" " somethig related to folding
+" let g:go_fmt_experimental = 1
