@@ -207,15 +207,6 @@ gls.right[3] = {
     separator = ' |',
     separator_highlight = {colors.darkblue,colors.bg},
     highlight = {colors.grey,colors.bg},
-<<<<<<< HEAD
-=======
-  }
-}
-gls.right[4] = {
-  ScrollBar = {
-    provider = 'ScrollBar',
-    highlight = {colors.yellow,colors.purple},
->>>>>>> origin/main
   }
 }
 gls.right[4] = {
@@ -224,32 +215,6 @@ gls.right[4] = {
     highlight = {colors.yellow,colors.purple},
   }
 }
-
--- gls.right[1]= {
---   FileFormat = {
---     provider = function() return vim.bo.filetype end,
---     highlight = { colors.fg,colors.section_bg },
---     separator = ' ',
---     separator_highlight = { colors.section_bg,colors.bg },
---   }
--- }
--- gls.right[2] = {
---   LineInfo = {
---     provider = 'LineColumn',
---     highlight = { colors.fg, colors.section_bg },
---     separator = ' | ',
---     separator_highlight = { colors.bg, colors.section_bg },
---   },
--- }
--- gls.right[3] = {
---   Heart = {
---     -- provider = function() return ' ' end,
---     provider = function() return ' ' end,
---     highlight = { colors.green, colors.section_bg },
---     separator = ' -> ',
---     separator_highlight = { colors.fg, colors.section_bg },
---   }
--- }
 
 -- gls.right[1]= {
 --   FileFormat = {
