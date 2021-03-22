@@ -56,16 +56,16 @@ gls.left[2] = {
   ViMode = {
     provider = function()
       local alias = {
-        n = 'NORMAL',
-        i = 'INSERT',
-        c = 'COMMAND',
-        V = 'VISUAL',
-        [''] = 'VISUAL',
-        v = 'VISUAL',
-        R = 'REPLACE',
-        s = 'SNIP ',
-        S = 'SNIP',
-        t = 'TERM',
+        n = '[NORMAL]',
+        i = '[INSERT]',
+        c = '[COMMAND]',
+        V = '[VISUAL]',
+        [''] = '[VISUAL]',
+        v = '[VISUAL]',
+        R = '[REPLACE]',
+        s = '[SNIP] ',
+        S = '[SNIP]',
+        t = '[TERM]',
       }
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color())
       return alias[vim.fn.mode()]..' '

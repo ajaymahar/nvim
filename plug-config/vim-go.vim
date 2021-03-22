@@ -111,4 +111,14 @@ let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 
 " " somethig related to folding
-" let g:go_fmt_experimental = 1
+let g:go_fmt_experimental = 1
+
+"For Folding
+  "Method for folding
+set foldmethod=indent
+  "Open all when entering for the first time
+" set foldlevel=20
+  " Save the state for the next time
+autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent! loadview
+
