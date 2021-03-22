@@ -42,6 +42,7 @@ source ~/.config/nvim/themes/molokai.vim
   luafile ~/.config/nvim/lua/lsp/json-ls.lua
   luafile ~/.config/nvim/lua/lsp/vim-ls.lua
   luafile ~/.config/nvim/lua/lsp/yaml-ls.lua
+  luafile ~/.config/nvim/lua/lsp/python-ls.lua
 
   " Golang
   source ~/.config/nvim/plug-config/vim-go.vim

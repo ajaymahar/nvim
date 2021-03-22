@@ -59,14 +59,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " You can't stop me
 cmap w!! w !sudo tee %
 
-"For Folding
-  "Method for folding
-set foldmethod=syntax
-  "Open all when entering for the first time
-" set foldlevel=20
-  " Save the state for the next time
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent! loadview
 
 " Setting Hybrid numner bar
 set number relativenumber
