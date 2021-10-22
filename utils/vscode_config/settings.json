@@ -1,8 +1,8 @@
 {
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.vim",
-  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
+  // "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/vimscript/nv-vscode/init.vim",
+  // "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/vimscript/nv-vscode/init.vim",
   "whichkey.sortOrder": "alphabetically",
   "whichkey.delay": 0,
   "whichkey.bindings": [
@@ -146,7 +146,7 @@
         },
         {
           "key": "R",
-          "name": "Restart debug",
+          "name": "Restart ebug",
           "type": "command",
           "command": "workbench.action.debug.restart"
         },
@@ -983,7 +983,7 @@
   "kite.showWelcomeNotificationOnStartup": false,
   "python.terminal.activateEnvironment": false,
   "editor.cursorBlinking": "solid",
-  "editor.fontFamily": "FiraCode Nerd Font Mono, Hack, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "JetBrainsMono Nerd Font, Hack, Menlo, Monaco, 'Courier New', monospace",
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
