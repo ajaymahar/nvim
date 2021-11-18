@@ -63,13 +63,13 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'golangci-lint']
 " let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_metalinter_enabled = ["govet", 'vet', 'errcheck', 'errname', 'deadcode', 'gosimple', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck', 'bodyclose', 'goconst', 'godox', 'goerr113', 'gofmt', 'goimports', 'gosec', 'lll', 'misspell', 'nilerr', 'nlreturn', 'noctx', 'paralleltest', 'promlinter', 'revive', 'rowserrcheck', 'sqlclosecheck', 'unconvert', 'unparam', 'wrapcheck']
-let g:go_metalinter_autosave_enabled = ['govet', 'vet', 'errcheck', 'errname', 'deadcode', 'gosimple', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck', 'bodyclose', 'goconst', 'godox', 'goerr113', 'gofmt', 'goimports', 'gosec', 'lll', 'misspell', 'nilerr', 'nlreturn', 'noctx', 'paralleltest', 'promlinter', 'revive', 'rowserrcheck', 'sqlclosecheck', 'unconvert', 'unparam', 'wrapcheck']
+" let g:go_metalinter_autosave_enabled = ['govet', 'vet', 'errcheck', 'errname', 'deadcode', 'gosimple', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck', 'bodyclose', 'goconst', 'godox', 'goerr113', 'gofmt', 'goimports', 'gosec', 'lll', 'misspell', 'nilerr', 'nlreturn', 'noctx', 'paralleltest', 'promlinter', 'revive', 'rowserrcheck', 'sqlclosecheck', 'unconvert', 'unparam', 'wrapcheck']
 let g:go_metalinter_deadline = "5s"
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_command = "golangci-lint"
 let g:go_list_autoclose = 1
 
-let g:go_doc_popup_window = 1 
+let g:go_doc_popup_window = 0
 let g:go_def_mode = 'gopls'
 let g:go_info_mode='gopls'
 " -- " disable vim-go :GoDef short cut (gd)
@@ -83,7 +83,7 @@ let g:go_decls_includes = "func,type"
 " -- "
 " -- "
 " -- " vim-go has a support to automatically show the information whenever you move your cursor.
-let g:go_auto_type_info = 0 
+let g:go_auto_type_info = 1
 
 set updatetime=100
 
@@ -127,3 +127,6 @@ set foldmethod=indent
 autocmd BufWinLeave *.* mkview
 " -- " autocmd BufWinEnter *.* silent! loadview
 autocmd BufWritePre *.go lua goimports(1000)
+
+let g:go_doc_keywordprg_enabled = 1
+
