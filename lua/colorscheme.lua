@@ -5,7 +5,7 @@ vim.cmd('syntax on')
 vim.g.oceanic_next_terminal_bold = 1
 vim.g.oceanic_next_terminal_italic = 1
 
-vim.cmd('set background=dark')
+-- vim.cmd('set background=dark')
 vim.cmd('set number')
 vim.cmd('set laststatus=2')
 vim.cmd('set t_Co=256')

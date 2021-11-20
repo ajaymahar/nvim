@@ -10,11 +10,11 @@ an executable
 
 -- general
 O.auto_complete = true
-O.colorscheme = 'molokai'
+-- O.colorscheme = 'molokai'
 -- O.colorscheme = 'gruvbox'
 -- O.colorscheme = 'OceanicNext'
 -- O.colorscheme = 'PaperColor'
--- O.colorscheme = 'doom-one'
+O.colorscheme = 'doom-one'
 -- O.colorscheme = 'nvcode'
 -- O.colorscheme = 'shades_of_purple'
 -- O.colorscheme = 'nightfly'

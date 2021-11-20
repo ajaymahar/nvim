@@ -2,7 +2,7 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
  -- following options are the default
  -- each of these are documented in `:help nvim-tree.OPTION_NAME`
  require'nvim-tree'.setup {
-   update_cwd          = true,
+   update_cwd          = false,
    update_to_buf_dir   = {
      enable = true,
      auto_open = true,
@@ -26,7 +26,7 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
      args = {}
    },
    filters = {
-     dotfiles = false,
+     dotfiles = true,
      custom = {".git", "node_modules", ".cache", ".vscode", ".vs", "*.meta"}
    },
    view = {
@@ -38,8 +38,8 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
      mappings = {
        custom_only = false,
        list = {
-       { key = "o",							 cb = tree_cb("edit") },
-       { key = "l",							 cb = tree_cb("cd") },
+       { key = "l",							 cb = tree_cb("edit") },
+       { key = "o",							 cb = tree_cb("cd") },
        { key = "<2-RightMouse>", 		     cb = tree_cb("cd") },
        { key = "v",                          cb = tree_cb("vsplit") },
        { key = "s",                          cb = tree_cb("split") },

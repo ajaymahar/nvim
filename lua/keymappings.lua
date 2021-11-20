@@ -80,3 +80,5 @@ vim.api.nvim_set_keymap('n', '<C-n>', ':FloatermToggle<CR>', {noremap = true, si
 -- splitjoin keymapping
 vim.api.nvim_set_keymap('n', 'sk', ':SplitjoinSplit<CR>', {noremap = false, silent = true})
 vim.api.nvim_set_keymap('n', 'sj', ':SplitjoinJoin<CR>', {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', 'm', ':BufferPick<CR>',  {noremap = true, silent = true})

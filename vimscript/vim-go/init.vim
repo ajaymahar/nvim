@@ -40,7 +40,7 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 let g:go_fmt_command = "goimports"
-let g:go_list_type = "quickfix"
+" let g:go_list_type = "quickfix"
 let g:go_test_timeout = '10s'
 " -- " json snippet can be set as camelcase or snake_case
 " -- " snake_case is default one uncomment below line for camelcase
@@ -67,7 +67,7 @@ let g:go_metalinter_enabled = ["govet", 'vet', 'errcheck', 'errname', 'deadcode'
 let g:go_metalinter_deadline = "5s"
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_command = "golangci-lint"
-let g:go_list_autoclose = 1
+" let g:go_list_autoclose = 1
 
 let g:go_doc_popup_window = 0
 let g:go_def_mode = 'gopls'
