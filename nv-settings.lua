@@ -14,10 +14,11 @@ O.auto_complete = true
 -- O.colorscheme = 'gruvbox'
 -- O.colorscheme = 'OceanicNext'
 -- O.colorscheme = 'PaperColor'
-O.colorscheme = 'doom-one'
+-- O.colorscheme = 'doom-one'
 -- O.colorscheme = 'nvcode'
 -- O.colorscheme = 'shades_of_purple'
 -- O.colorscheme = 'nightfly'
+O.colorscheme = 'dracula'
 O.auto_close_tree = 0
 
 
