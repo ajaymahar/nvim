@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/doom-one.vim",
     url = "https://github.com/romgrk/doom-one.vim"
   },
-  ["emmet-vim"] = {
-    loaded = true,
-    path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/emmet-vim",
-    url = "https://github.com/mattn/emmet-vim"
-  },
   ["far.vim"] = {
     loaded = true,
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/far.vim",
@@ -153,11 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
-  },
-  ["java-snippets"] = {
-    loaded = true,
-    path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/java-snippets",
-    url = "https://github.com/ChristianChiarulli/java-snippets"
   },
   ["lexima.vim"] = {
     loaded = true,
@@ -209,10 +199,10 @@ _G.packer_plugins = {
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
-  ["nvim-compe"] = {
+  ["nvim-comp"] = {
     loaded = true,
-    path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/nvim-compe",
-    url = "https://github.com/hrsh7th/nvim-compe"
+    path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/nvim-comp",
+    url = "https://github.com/hrsh7th/nvim-comp"
   },
   ["nvim-dap"] = {
     loaded = true,
@@ -245,7 +235,6 @@ _G.packer_plugins = {
     url = "https://github.com/bfredl/nvim-miniyank"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
@@ -341,7 +330,6 @@ _G.packer_plugins = {
     url = "https://github.com/preservim/tagbar"
   },
   ["todo-comments.nvim"] = {
-    config = { "\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0" },
     loaded = true,
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
@@ -426,11 +414,6 @@ _G.packer_plugins = {
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
   },
-  ["vim-rooter"] = {
-    loaded = true,
-    path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/vim-rooter",
-    url = "https://github.com/airblade/vim-rooter"
-  },
   ["vim-smoothie"] = {
     loaded = true,
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/vim-smoothie",
@@ -440,11 +423,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/vim-snippets",
     url = "https://github.com/honza/vim-snippets"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["vim-which-key"] = {
     loaded = true,
@@ -464,14 +442,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
 if should_profile then save_profiles() end
 
 end)

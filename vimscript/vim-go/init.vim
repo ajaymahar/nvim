@@ -65,7 +65,7 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_metalinter_enabled = ["govet", 'vet', 'errcheck', 'errname', 'deadcode', 'gosimple', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck', 'bodyclose', 'goconst', 'godox', 'goerr113', 'gofmt', 'goimports', 'gosec', 'lll', 'misspell', 'nilerr', 'nlreturn', 'noctx', 'paralleltest', 'promlinter', 'revive', 'rowserrcheck', 'sqlclosecheck', 'unconvert', 'unparam', 'wrapcheck']
 " let g:go_metalinter_autosave_enabled = ['govet', 'vet', 'errcheck', 'errname', 'deadcode', 'gosimple', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck', 'bodyclose', 'goconst', 'godox', 'goerr113', 'gofmt', 'goimports', 'gosec', 'lll', 'misspell', 'nilerr', 'nlreturn', 'noctx', 'paralleltest', 'promlinter', 'revive', 'rowserrcheck', 'sqlclosecheck', 'unconvert', 'unparam', 'wrapcheck']
 let g:go_metalinter_deadline = "5s"
-let g:go_metalinter_autosave = 1
+" let g:go_metalinter_autosave = 1
 let g:go_metalinter_command = "golangci-lint"
 let g:go_list_autoclose = 1
 

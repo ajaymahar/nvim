@@ -29,42 +29,27 @@ return require('packer').startup(function(use)
     use 'glepnir/lspsaga.nvim'
     use 'onsails/lspkind-nvim'
     use 'kosayoda/nvim-lightbulb'
-    -- use 'mfussenegger/nvim-jdtls'
-    use 'kabouzeid/nvim-lspinstall'
 
     -- Debugging
     use 'mfussenegger/nvim-dap'
 
     -- Autocomplete
     use 'hrsh7th/nvim-compe'
-    use 'mattn/emmet-vim'
-    use 'hrsh7th/vim-vsnip'
-    use 'ChristianChiarulli/java-snippets'
 	use "rafamadriz/friendly-snippets"
-    -- use 'xabikos/vscode-javascript'
-    -- use 'dsznajder/vscode-es7-javascript-react-snippets'
-    -- use 'golang/vscode-go'
-    -- use 'rust-lang/vscode-rust'
-    -- use 'ChristianChiarulli/html-snippets'
-    -- use 'ChristianChiarulli/python-snippets'
 
     -- Treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'nvim-treesitter/nvim-treesitter-refactor'
     use 'nvim-treesitter/playground'
     use 'p00f/nvim-ts-rainbow'
-    -- use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
 	use 'JoosepAlviste/nvim-ts-context-commentstring'
 
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
     use 'ryanoasis/vim-devicons'
 
-    -- Status Line and Bufferline
-    -- use 'glepnir/galaxyline.nvim'
     use 'romgrk/barbar.nvim'
 	use 'vim-airline/vim-airline'
-	-- use 'vim-airline/vim-airline-themes'
 	use 'morhetz/gruvbox'
 	use 'romgrk/doom-one.vim'
   use 'Rigellute/shades-of-purple.vim' 
@@ -72,16 +57,6 @@ return require('packer').startup(function(use)
     -- Telescope
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
-    -- use 'nvim-telescope/telescope.nvim'
-    -- use 'nvim-telescope/telescope-media-files.nvim'
-
-   -- use {
-   --    'nvim-telescope/telescope.nvim',
-   --    requires = { {'nvim-lua/plenary.nvim'} }
-   -- }
-
-    -- Explorer
-   -- use 'kyazdani42/nvim-tree.lua'
 use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
@@ -117,8 +92,6 @@ use {
     use 'turbio/bracey.vim'
 
 	use 'AndrewRadev/splitjoin.vim'
-    -- Registers
-    -- use 'gennaro-tedesco/nvim-peekup'
 
     -- Navigation
     use 'unblevable/quick-scope'
@@ -138,7 +111,6 @@ use {
     use 'liuchengxu/vista.vim'
     use 'terrortylor/nvim-comment'
     use 'bfredl/nvim-miniyank'
-    use 'monaqa/dial.nvim'
     use 'junegunn/goyo.vim'
     use 'andymass/vim-matchup'
     use 'cohama/lexima.vim'
@@ -174,30 +146,4 @@ use {
 	-- carbon
 	use 'kristijanhusak/vim-carbon-now-sh'
 
-    -- use 'kshenoy/vim-signature'
-    -- use 'nelstrom/vim-visual-star-search'
-	-- TODO switch back when config support snips
-    -- use 'windwp/nvim-autopairs'
-
-    -- TODO put this back when stable for indent lines
-    -- vim.g.indent_blankline_space_char = ''
-    -- use 'b3nj5m1n/kommentary'
-    -- use {
-    --     'glacambre/firenvim',
-    --     run = function()
-    --         vim.fn['firenvim#install'](1)
-    --     end
-    -- }
-    -- use 'glepnir/dashboard-nvim'
-    -- use 'mhinz/vim-startify'
-    -- use 'cstrap/python-snippets'
-    -- use 'ylcnfrht/vscode-python-snippet-pack'
-    -- use 'norcalli/snippets.nvim'
-    -- use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
-    -- use 'SirVer/ultisnips'
-    -- use 'honza/vim-snippets'
-    -- vim.g.UltiSnipsExpandTrigger="<CR>"
-    -- vim.g.UltiSnipsJumpForwardTrigger="<Tab>"
-    -- vim.g.UltiSnipsJumpBackwardTrigger="<S-Tab>"
-    -- use 'blackcauldron7/surround.nvim'
 end)

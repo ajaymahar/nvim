@@ -2,7 +2,7 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
  -- following options are the default
  -- each of these are documented in `:help nvim-tree.OPTION_NAME`
  require'nvim-tree'.setup {
-   update_cwd          = true,
+   update_cwd          = false,
    update_to_buf_dir   = {
      enable = false,
      auto_open = false,
