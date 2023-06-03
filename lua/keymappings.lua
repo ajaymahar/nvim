@@ -73,7 +73,7 @@ vim.api.nvim_set_keymap('n', '<C-t>', ':TagbarToggle<CR>', {noremap = true, sile
 -- undotrere
 vim.api.nvim_set_keymap('n', '<Leader>u', ':UndotreeToggle<CR>', {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('n', ';', ':FloatermNew --wintype=split --position=rightbelow --height=17 --cwd=<root><CR> ', {noremap = false, silent = false})
+vim.api.nvim_set_keymap('n', ';', ':FloatermNew --wintype=split --position=rightbelow --height=15 --cwd=<root><CR> ', {noremap = false, silent = false})
 vim.api.nvim_set_keymap('n', '<C-n>', ':FloatermToggle<CR>', {noremap = true, silent = true})
 
 

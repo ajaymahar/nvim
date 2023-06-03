@@ -39,12 +39,12 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 " -- " set 4 spaces for tab in golang files
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
-let g:go_fmt_command = "goimports"
+" let g:go_fmt_command = "goimports"
 " let g:go_list_type = "quickfix"
 let g:go_test_timeout = '10s'
 " -- " json snippet can be set as camelcase or snake_case
 " -- " snake_case is default one uncomment below line for camelcase
-" -- " let g:go_addtags_transform = "camelcase"
+let g:go_addtags_transform = "camelcase"
 " -- "
 " -- "
 " -- " syntax highlighting enabled
@@ -64,7 +64,7 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'golangci-lint']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_metalinter_enabled = ["govet", 'vet', 'errcheck', 'errname', 'deadcode', 'gosimple', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck', 'bodyclose', 'goconst', 'godox', 'goerr113', 'gofmt', 'goimports', 'gosec', 'lll', 'misspell', 'nilerr', 'nlreturn', 'noctx', 'paralleltest', 'promlinter', 'revive', 'rowserrcheck', 'sqlclosecheck', 'unconvert', 'unparam', 'wrapcheck']
 " let g:go_metalinter_autosave_enabled = ['govet', 'vet', 'errcheck', 'errname', 'deadcode', 'gosimple', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck', 'bodyclose', 'goconst', 'godox', 'goerr113', 'gofmt', 'goimports', 'gosec', 'lll', 'misspell', 'nilerr', 'nlreturn', 'noctx', 'paralleltest', 'promlinter', 'revive', 'rowserrcheck', 'sqlclosecheck', 'unconvert', 'unparam', 'wrapcheck']
-let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_deadline = "30s"
 " let g:go_metalinter_autosave = 1
 let g:go_metalinter_command = "golangci-lint"
 let g:go_list_autoclose = 1
@@ -130,3 +130,5 @@ autocmd BufWritePre *.go lua goimports(1000)
 
 let g:go_doc_keywordprg_enabled = 1
 
+" prettify sql:
+vnoremap <leader>p :s/\<update\>\\|\<select\>\\|\<from\>\\|\<where>\\|\<left join\>\\|\<inner join\>\\|\<group by\>\\|\<order by\>/\r\U&/ge<cr><esc>

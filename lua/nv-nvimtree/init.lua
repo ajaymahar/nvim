@@ -4,8 +4,8 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
  require'nvim-tree'.setup {
    update_cwd          = false,
    update_to_buf_dir   = {
-     enable = false,
-     auto_open = false,
+     enable = true,
+     auto_open = true,
    },
    diagnostics = {
      enable = true,
@@ -26,8 +26,8 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
      args = {}
    },
    filters = {
-     dotfiles = true,
-     custom = {".git", "node_modules", ".cache", ".vscode", ".vs", "*.meta"}
+     -- dotfiles = true,
+     -- custom = {".cache", ".vscode", ".vs", "*.meta"}
    },
    view = {
      width = 30,

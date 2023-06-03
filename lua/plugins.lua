@@ -146,4 +146,8 @@ use {
 	-- carbon
 	use 'kristijanhusak/vim-carbon-now-sh'
 
+	-- use 'Exafunction/codeium.vim'
+	use 'Exafunction/codeium.vim'
+
+	use 'stephpy/vim-yaml'
 end)

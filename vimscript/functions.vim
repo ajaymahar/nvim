@@ -110,3 +110,8 @@ highlight QuickScopeSecondary guifg='#eF5F70' gui=underline ctermfg=81 cterm=und
 
 let g:nightflyCursorColor = 1
 let g:nightflyUnderlineMatchParen = 1
+
+autocmd BufReadPost *.yaml,*.yml set sw=2 ts=2 sts=2 foldmethod=indent foldlevel=2 expandtab
+autocmd BufWritePost *.yaml,*.yml silent! %s/\s\+$//
+autocmd BufWritePost *.yaml,*.yml silent! %s/^\(\s*\)#\(\S\)/\1# \2/g
+" autocmd BufWritePost *.yaml,*.yml silent! %s/^\(\s*\)-\(\S\)/\1- \2/g
