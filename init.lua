@@ -10,6 +10,9 @@ require('colorscheme')
 -- Plugins
 require('nv-compe')
 require('nv-colorizer')
+-- require("nvim-tree").setup({
+--   on_attach = on_attach,
+-- })
 require('nv-nvimtree')
 require('nv-treesitter')
 require('nv-quickscope')

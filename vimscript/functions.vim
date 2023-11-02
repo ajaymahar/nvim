@@ -115,3 +115,15 @@ autocmd BufReadPost *.yaml,*.yml set sw=2 ts=2 sts=2 foldmethod=indent foldlevel
 autocmd BufWritePost *.yaml,*.yml silent! %s/\s\+$//
 autocmd BufWritePost *.yaml,*.yml silent! %s/^\(\s*\)#\(\S\)/\1# \2/g
 " autocmd BufWritePost *.yaml,*.yml silent! %s/^\(\s*\)-\(\S\)/\1- \2/g
+
+
+let g:ale_linters = {
+\   'proto': ['buf-lint'],
+\}
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_linters_explicit = 1
+
+let g:ale_fixers = {
+\   'proto': ['buf-format'],
+\}
+let g:ale_fix_on_save = 1

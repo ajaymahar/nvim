@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ale = {
+    loaded = true,
+    path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/ale",
+    url = "https://github.com/dense-analysis/ale"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/barbar.nvim",
@@ -363,6 +368,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/vim-bookmarks",
     url = "https://github.com/MattesGroeger/vim-bookmarks"
+  },
+  ["vim-buf"] = {
+    loaded = true,
+    path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/vim-buf",
+    url = "https://github.com/bufbuild/vim-buf"
   },
   ["vim-carbon-now-sh"] = {
     loaded = true,

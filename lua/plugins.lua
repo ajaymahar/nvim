@@ -147,7 +147,12 @@ use {
 	use 'kristijanhusak/vim-carbon-now-sh'
 
 	-- use 'Exafunction/codeium.vim'
-	use 'Exafunction/codeium.vim'
+	-- use 'Exafunction/codeium.vim'
 
-	use 'stephpy/vim-yaml'
+	-- -- Multicuror plugin
+	-- use 'mg979/vim-visual-multi'
+	
+	-- proto file linter works with ale
+	use 'bufbuild/vim-buf'
+	use 'dense-analysis/ale'
 end)
