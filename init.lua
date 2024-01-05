@@ -38,7 +38,7 @@ require('lsp.golang-ls')
 
 -- Source config last
 vim.cmd('source ~/.config/nvim/vimscript/vim-go/init.vim')
--- vim.cmd('source ~/.config/nvim/vimscript/nv-whichkey/init.vim')
+vim.cmd('source ~/.config/nvim/vimscript/nv-whichkey/init.vim')
 vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 vim.cmd('source ~/.config/nvim/vimscript/ctrlp/init.vim')
 vim.cmd('source ~/.config/nvim/vimscript/carbon/init.vim')

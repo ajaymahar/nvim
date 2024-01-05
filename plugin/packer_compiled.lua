@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/bracey.vim",
     url = "https://github.com/turbio/bracey.vim"
   },
-  ["codeium.vim"] = {
-    loaded = true,
-    path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/codeium.vim",
-    url = "https://github.com/Exafunction/codeium.vim"
-  },
   ["codi.vim"] = {
     loaded = true,
     path = "/Users/ajay/.local/share/nvim/site/pack/packer/start/codi.vim",

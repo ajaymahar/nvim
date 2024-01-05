@@ -125,6 +125,7 @@ use {
 	use 'mhartington/oceanic-next'
 	use 'NLKNguyen/papercolor-theme'
 	use 'dracula/vim'
+	use { "catppuccin/nvim", as = "catppuccin" }
 
 	-- snippets
     use 'honza/vim-snippets' 
