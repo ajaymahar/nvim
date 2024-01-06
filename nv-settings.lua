@@ -19,7 +19,8 @@ O.auto_complete = true
 -- O.colorscheme = 'nvcode'
 -- O.colorscheme = 'shades_of_purple'
 -- O.colorscheme = 'nightfly'
-O.colorscheme = 'dracula'
+-- O.colorscheme = 'dracula'
+O.colorscheme = 'nordic'
 O.auto_close_tree = 0
 
 

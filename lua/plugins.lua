@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
     use 'romgrk/barbar.nvim'
 	use 'vim-airline/vim-airline'
 	use 'morhetz/gruvbox'
+	use 'AlexvZyl/nordic.nvim'
 	use 'romgrk/doom-one.vim'
   use 'Rigellute/shades-of-purple.vim' 
   use 'bluz71/vim-nightfly-guicolors'
