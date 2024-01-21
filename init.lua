@@ -10,7 +10,6 @@ require('plugins.tele')
 require('plugins.treesitter')
 require('plugins.lsp')
 require('plugins.trouble')
-require('plugins.ai')
 require('plugins.comment')
 require('plugins.barbar')
 --
