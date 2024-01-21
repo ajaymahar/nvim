@@ -13,7 +13,7 @@ require('nv-colorizer')
 -- require("nvim-tree").setup({
 --   on_attach = on_attach,
 -- })
-require('nv-nvimtree')
+-- require('nv-nvimtree')
 require('nv-treesitter')
 require('nv-quickscope')
 require('nv-gitsigns')

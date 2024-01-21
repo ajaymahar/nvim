@@ -1,160 +1,158 @@
--- vim.cmd [[packadd packer.nvim]]
-local execute = vim.api.nvim_command
-local fn = vim.fn
-
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-
-if fn.empty(fn.glob(install_path)) > 0 then
-    execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-    execute 'packadd packer.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  -- bootstrap lazy.nvim
+  -- stylua: ignore
+  vim.fn.system({ "git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath
+	})
 end
+vim.opt.rtp:prepend(lazypath)
 
-vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when there are changes in plugins.lua
+local plugins = {
 
--- require('packer').init({display = {non_interactive = true}})
-require('packer').init({display = {auto_clean = false}})
-
-return require('packer').startup(function(use)
     -- Packer can manage itself as an optional plugin
-    use 'wbthomason/packer.nvim'
+     'wbthomason/packer.nvim',
 
-    -- Information
-    use 'nanotee/nvim-lua-guide'
+     'nanotee/nvim-lua-guide',
 
-    -- Quality of life improvements
-    use 'norcalli/nvim_utils'
+     'norcalli/nvim_utils',
 
     -- LSP
-    use 'neovim/nvim-lspconfig'
-    use 'glepnir/lspsaga.nvim'
-    use 'onsails/lspkind-nvim'
-    use 'kosayoda/nvim-lightbulb'
+     'neovim/nvim-lspconfig',
+     'glepnir/lspsaga.nvim',
+     'onsails/lspkind-nvim',
+     'kosayoda/nvim-lightbulb',
 
     -- Debugging
-    use 'mfussenegger/nvim-dap'
+     'mfussenegger/nvim-dap',
 
     -- Autocomplete
-    use 'hrsh7th/nvim-compe'
-	use "rafamadriz/friendly-snippets"
+     'hrsh7th/nvim-compe',
+	 "rafamadriz/friendly-snippets",
 
-    -- Treesitter
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-    use 'nvim-treesitter/nvim-treesitter-refactor'
-    use 'nvim-treesitter/playground'
-    use 'p00f/nvim-ts-rainbow'
-	use 'JoosepAlviste/nvim-ts-context-commentstring'
+     -- Treesitter
+ 	 {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
+     'nvim-treesitter/nvim-treesitter-refactor',
+     'nvim-treesitter/playground', 
+     'p00f/nvim-ts-rainbow',
+	 'JoosepAlviste/nvim-ts-context-commentstring',
 
     -- Icons
-    use 'kyazdani42/nvim-web-devicons'
-    use 'ryanoasis/vim-devicons'
+     'kyazdani42/nvim-web-devicons',
+     'ryanoasis/vim-devicons',
 
-    use 'romgrk/barbar.nvim'
-	use 'vim-airline/vim-airline'
-	use 'morhetz/gruvbox'
-	use 'AlexvZyl/nordic.nvim'
-	use 'romgrk/doom-one.vim'
-  use 'Rigellute/shades-of-purple.vim' 
-  use 'bluz71/vim-nightfly-guicolors'
-    -- Telescope
-    use 'nvim-lua/popup.nvim'
-    use 'nvim-lua/plenary.nvim'
-use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-} 
+     'romgrk/barbar.nvim',
+	 'vim-airline/vim-airline',
+	 'morhetz/gruvbox',
+	 'AlexvZyl/nordic.nvim',
+	 'romgrk/doom-one.vim',
+    'Rigellute/shades-of-purple.vim' ,
+    'bluz71/vim-nightfly-guicolors',
+  --  Telescope,
+     'nvim-lua/popup.nvim',
+     'nvim-lua/plenary.nvim',
+	{
+   	 'kyazdani42/nvim-tree.lua',
+   	 dependencies = 'kyazdani42/nvim-web-devicons',
+	} ,
 
 -- TODO-plugin
-use {
-  "folke/todo-comments.nvim",
-  requires = "nvim-lua/plenary.nvim",
-}
+	{
+  		"folke/todo-comments.nvim",
+  		dependencies = "nvim-lua/plenary.nvim",
+	},
 
     -- Color
-    use 'christianchiarulli/nvcode-color-schemes.vim'
-    use 'norcalli/nvim-colorizer.lua'
-    use 'sheerun/vim-polyglot'
+     'christianchiarulli/nvcode-color-schemes.vim',
+     'norcalli/nvim-colorizer.lua',
+     'sheerun/vim-polyglot',
 
     -- Git
-    use 'TimUntersberger/neogit'
-    use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
-    use 'f-person/git-blame.nvim'
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-rhubarb'
+     'TimUntersberger/neogit',
+     {'lewis6991/gitsigns.nvim', dependencies = {'nvim-lua/plenary.nvim'}},
+     'f-person/git-blame.nvim',
+     'tpope/vim-fugitive',
+     'tpope/vim-rhubarb',
 
     -- Easily Create Gists
-    use 'mattn/vim-gist'
-    use 'mattn/webapi-vim'
+     'mattn/vim-gist',
+     'mattn/webapi-vim',
 
 	-- find and replace for neovim
-	use 'brooth/far.vim'
+	 'brooth/far.vim',
     -- Webdev
-    use 'windwp/nvim-ts-autotag'
-   --  use 'gennaro-tedesco/nvim-jqx'
-    use 'turbio/bracey.vim'
+     'windwp/nvim-ts-autotag',
+     'turbio/bracey.vim',
 
-	use 'AndrewRadev/splitjoin.vim'
+	 'AndrewRadev/splitjoin.vim',
 
     -- Navigation
-    use 'unblevable/quick-scope'
-    use 'phaazon/hop.nvim'
-    use 'kevinhwang91/rnvimr'
+     'unblevable/quick-scope',
+     'phaazon/hop.nvim',
+     'kevinhwang91/rnvimr',
 
     -- General Plugins
-    use 'liuchengxu/vim-which-key'
-    use 'kevinhwang91/nvim-bqf'
-    -- use 'airblade/vim-rooter'
-    use 'ChristianChiarulli/dashboard-nvim'
-    use 'metakirby5/codi.vim'
-    use 'psliwka/vim-smoothie'
-    use 'moll/vim-bbye'
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}
-    use 'voldikss/vim-floaterm'
-    use 'liuchengxu/vista.vim'
-    use 'terrortylor/nvim-comment'
-    use 'bfredl/nvim-miniyank'
-    use 'junegunn/goyo.vim'
-    use 'andymass/vim-matchup'
-    use 'cohama/lexima.vim'
-    use 'MattesGroeger/vim-bookmarks'
+     'liuchengxu/vim-which-key',
+     'kevinhwang91/nvim-bqf',
+     'ChristianChiarulli/dashboard-nvim',
+     'metakirby5/codi.vim',
+     'psliwka/vim-smoothie',
+     'moll/vim-bbye',
+     {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'},
+     'voldikss/vim-floaterm',
+     'liuchengxu/vista.vim',
+     'terrortylor/nvim-comment',
+     'bfredl/nvim-miniyank',
+     'junegunn/goyo.vim',
+     'andymass/vim-matchup',
+     'cohama/lexima.vim',
+     'MattesGroeger/vim-bookmarks',
 
 
 	-- vim-go
-	use {'fatih/vim-go', run = ':GoUpdateBinaries'}
+	 {'fatih/vim-go', run = ':GoUpdateBinaries'},
 
 	-- themes
-	use 'fatih/molokai'
-	use 'mhartington/oceanic-next'
-	use 'NLKNguyen/papercolor-theme'
-	use 'dracula/vim'
-	use { "catppuccin/nvim", as = "catppuccin" }
+	 'fatih/molokai',
+	 'mhartington/oceanic-next',
+	 'NLKNguyen/papercolor-theme',
+	 'dracula/vim',
+	 { "catppuccin/nvim", as = "catppuccin" },
 
 	-- snippets
-    use 'honza/vim-snippets' 
-	use 'SirVer/ultisnips'
+     'honza/vim-snippets' ,
+	 'SirVer/ultisnips',
 
 	-- crtlp fzf files finder
-    use 'https://github.com/ctrlpvim/ctrlp.vim.git'
+     'https://github.com/ctrlpvim/ctrlp.vim.git',
 
     -- " FZF vim router
-    use {'junegunn/fzf',  run = 'fzf#install()' }
-    use 'junegunn/fzf.vim'
+     {'junegunn/fzf',  run = 'fzf#install()' },
+     'junegunn/fzf.vim',
 
 
     -- " Tagbar plugin for batter view the class and methods
-    use 'preservim/tagbar'
+     'preservim/tagbar',
 
     -- " Undotree
-    use 'mbbill/undotree'
+     'mbbill/undotree',
 	-- carbon
-	use 'kristijanhusak/vim-carbon-now-sh'
+	 'kristijanhusak/vim-carbon-now-sh',
 
-	-- use 'Exafunction/codeium.vim'
-	-- use 'Exafunction/codeium.vim'
+	 'Exafunction/codeium.vim',
+	 'Exafunction/codeium.vim',
 
-	-- -- Multicuror plugin
-	-- use 'mg979/vim-visual-multi'
+	-- Multicuror plugin
+	 'mg979/vim-visual-multi',
 	
 	-- proto file linter works with ale
-	use 'bufbuild/vim-buf'
-	use 'dense-analysis/ale'
-end)
+	 'bufbuild/vim-buf',
+	 'dense-analysis/ale'
+}
+
+local opts = {}
+require("lazy").setup(plugins, opts)
