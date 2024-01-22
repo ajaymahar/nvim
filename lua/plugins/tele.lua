@@ -11,6 +11,7 @@ require('telescope').setup {
         ['<C-d>'] = false,
         ["<C-j>"] = require('telescope.actions').move_selection_next,
         ["<C-k>"] = require('telescope.actions').move_selection_previous,
+        ["<C-s>"] = require('telescope.actions').select_horizontal,
       },
     },
   },

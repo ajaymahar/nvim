@@ -1,0 +1,1 @@
+SELECT * from "MOCK_DATA" WHERE username like ('aj%')

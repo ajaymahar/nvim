@@ -1,0 +1,1 @@
+[{"url": "postgresql://root:password@localhost:5432/auth_db", "name": "auth_db"}]

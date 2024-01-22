@@ -18,6 +18,18 @@ vim.api.nvim_set_keymap("n", "<Leader><tab>", "<Cmd>lua require('telescope.built
 vim.api.nvim_set_keymap("n", "<C-N>", ":lua require('FTerm').toggle()<CR>", {noremap=true})
 vim.api.nvim_set_keymap("t", "<C-N>", '<C-\\><C-n>:lua require("FTerm").toggle()<CR>', {noremap=true})
 
+-- Open Lazygit inside nvim keymap
+local fterm = require("FTerm")
+local lazygit= fterm:new({
+    ft = 'fterm_lazygit',
+    cmd = "lazygit"
+})
+ -- Use this to toggle btop in a floating terminal
+vim.keymap.set('n', '<Leader>lg', function()
+    lazygit:toggle()
+end)
+--
+--
 -- Noice
 vim.api.nvim_set_keymap("n", "<leader>nn", ":NoiceDismiss<CR>", {noremap=true})
 

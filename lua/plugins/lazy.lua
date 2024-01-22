@@ -34,42 +34,28 @@ require('lazy').setup({
     opts = {
     },
   },
-  {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    lazy = false,
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("neorg").setup {
-        load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.summary"] = {},
-          ["core.completion"] = {
-            config = {
-              engine = "nvim-cmp"
-            }
-          },
-          ["core.dirman"] = { -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                notes = "~/notes",
-                youtube = "~/notes/youtube",
-              },
-            },
-          },
-          ["core.export"] = {},
-        },
-      }
-    end,
-  },
   'folke/zen-mode.nvim',
-  'David-Kunz/gen.nvim',
-  'tpope/vim-dadbod',
   'tpope/vim-obsession',
+  'tpope/vim-dadbod',
   'kristijanhusak/vim-dadbod-ui',
   'kristijanhusak/vim-dadbod-completion',
 
+  {
+    'kristijanhusak/vim-dadbod-ui',
+    dependencies = {
+      { 'tpope/vim-dadbod', lazy = true },
+      { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+    },
+    init = function()
+      -- Your DBUI configuration
+    vim.g.db_ui_use_nerd_fonts = 1
+    vim.g.db_ui_tmp_query_location = '/tmp/queries'
+    -- vim.g.db_ui_win_position = 'right'
+    vim.g.db_ui_show_database_icon = 1
+    vim.g.db_ui_force_echo_notifications = 1
+    end,
+  },
+  --
   -- Database
   {
     "tpope/vim-dadbod",
@@ -91,15 +77,15 @@ require('lazy').setup({
     config = function()
     local map = vim.api.nvim_set_keymap
     local opts = { noremap = true, silent = true }
-    require 'FTerm'.setup({
-      blend = 5,
-      dimensions = {
-        height = 0.90,
-        width = 0.90,
-        x = 0.5,
-        y = 0.5
-      }
-    })
+    -- require 'FTerm'.setup({
+    --   blend = 5,
+    --   dimensions = {
+    --     height = 0.90,
+    --     width = 0.90,
+    --     x = 0.5,
+    --     y = 0.5
+    --   }
+    -- })
     end
   },
 
