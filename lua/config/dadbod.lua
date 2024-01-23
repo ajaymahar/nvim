@@ -10,6 +10,13 @@ function M.setup()
   vim.api.nvim_create_autocmd("FileType", {
     pattern = {
       "sql",
+    },
+    command = [[setlocal omnifunc=vim_dadbod_completion#omni]],
+  })
+
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = {
+      "sql",
       "mysql",
       "plsql",
     },
