@@ -280,6 +280,9 @@ require('lazy').setup({
   -- UndoTree
   'mbbill/undotree',
 
+  -- Diffvim
+  'sindrets/diffview.nvim',
+  --
   -- Git related plugins
   'tpope/vim-fugitive',
   'lewis6991/gitsigns.nvim',
